@@ -4,6 +4,7 @@ package callPack;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import com.google.common.collect.ImmutableMap;
@@ -35,7 +38,7 @@ public class SetupEnv {
 	String app = System.getenv("BROWSERSTACK_APP_ID");
     public AndroidDriver driver;
     
-    @BeforeMethod(alwaysRun=true)
+    @BeforeClass(alwaysRun=true)
     public void setUp() throws Exception {
     	/*
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -76,7 +79,7 @@ public class SetupEnv {
 		*/
     }
 
-    @AfterMethod(alwaysRun=true)
+    @AfterClass(alwaysRun=true)
     public void tearDown() throws Exception {
         driver.quit();
     }
@@ -91,12 +94,12 @@ public class SetupEnv {
     
 	public WebElement createAccount() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/createAccount")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("createAccount")));
 	}
 	
 	public WebElement loginApp() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/loginButton")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("loginButton")));
 	}
     
     /*
@@ -107,43 +110,46 @@ public class SetupEnv {
      */
 	public WebElement nameText() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/Name")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Name")));
 	}
 	
 	public WebElement add1Text() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/Address1")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Address1")));
 	}
 	
 	public WebElement add2Text() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/Address2")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Address2")));
 	}
 	
 	public WebElement accNumText() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/AccountNumber")));	
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("AccountNumber")));	
 	}
 	public WebElement pinNumText() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/PINno")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("PINno")));
 	}
 	
 	public WebElement currBalText() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/Balance")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Balance")));
 	}
 	
 	public WebElement saveUserBtn() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/saveUser")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("saveUser")));
 	}
 	
 	public WebElement alertTitle() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("android:id/alertTitle")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("alertTitle")));
 	}
-	
+	public WebElement alertOK() {
+		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("button3")));
+	}
 	
 	
 	/*
@@ -153,11 +159,11 @@ public class SetupEnv {
 	 */
 	public WebElement enterPin() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/enteredPIN")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("enteredPIN")));
 	}
 	public WebElement loginBtn() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/loginButton")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("loginButton")));
 	}
 	/*
 	 * 
@@ -167,22 +173,22 @@ public class SetupEnv {
 	 */
 	public WebElement accInfo() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/button")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("button")));
 	}
 	
 	public WebElement addTranc() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/buttonAddTrans")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("buttonAddTrans")));
 	}
 	
 	public WebElement viewTranc() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/buttonViewTrans")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("buttonViewTrans")));
 	}
 	
 	public WebElement logout() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/buttonLogout")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("buttonLogout")));
 	}
 	
 	/*
@@ -192,35 +198,88 @@ public class SetupEnv {
 	 */
 	public WebElement nameView() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/textViewName")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewName")));
 	}
 	
 	public WebElement add1View() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/textViewAddress1")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewAddress1")));
 	}
 	
 	public WebElement add2View() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/textViewAddress2")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewAddress2")));
 	}
 	
 	public WebElement accNumView() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/textViewAccNo")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewAccNo")));
 	}
 	
 	public WebElement pinNumView() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/textViewAccNo")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewPIN")));
 	}
 	
 	public WebElement currBalView() {
 		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("marcusobyrne.bankingapp:id/textViewBalance")));
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewBalance")));
 	}
 	
+	/*
+	 * 
+	 * 
+	 * Add Transaction
+	 * 
+	 * 
+	 * 
+	 */
+	public WebElement editTextDesc() {
+		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("editTextDecription")));
+	}
+	public WebElement editTextAmt() {
+		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("editTextAmount")));
+	}
+	public WebElement addTrancBtn() {
+		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("button2")));
+	}
 	
+	/*
+	 * 
+	 * View Transaction
+	 * 
+	 */
+	public WebElement viewTrancText() {
+		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewTransactions")));
+	}
+	/*
+	 * GENERAL
+	 * 
+	 * 
+	 */
+	public boolean isAlertPresent() {
+	    try {
+	        driver.switchTo().alert();
+	        System.out.println("ALERT IS PRESENT !! ");
+	        return true;
+	    } catch (Exception e) {
+	    	System.out.println("ALERT IS NOT PRESENT !! ");
+	        return false;
+	    }
+	}
+	public void mobileAlertHandle() {
+	    if (isAlertPresent()) {
+	        Alert alert = driver.switchTo().alert();
+	        alert.accept();
+	   }
+	}
+	public void navigateBack() {
+		driver.pressKey(new KeyEvent(AndroidKey.BACK));
+	}
 }
 
     
