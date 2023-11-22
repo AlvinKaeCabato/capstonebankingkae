@@ -6,35 +6,38 @@
     <classes>
       <class name="casesPack.MainRunClass">
         <methods>
-          <include name="BAA_03"/>
+          <include name="BAA_01"/>
+          <include name="BAA_02"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- casesPack.MainRunClass -->
     </classes>
   </test> <!-- CapstoneTest-1(failed) -->
-  <test thread-count="9" parallel="classes" name="CapstoneTest-2(failed)" verbose="0">
-    <parameter name="platform" value="2"/>
-    <classes>
-      <class name="casesPack.MainRunClass">
-        <methods>
-          <include name="BAA_03"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- casesPack.MainRunClass -->
-    </classes>
-  </test> <!-- CapstoneTest-2(failed) -->
   <test thread-count="9" parallel="classes" name="CapstoneTest-0(failed)" verbose="0">
     <parameter name="platform" value="0"/>
     <classes>
       <class name="casesPack.MainRunClass">
         <methods>
-          <include name="BAA_03"/>
+          <include name="BAA_01"/>
+          <include name="BAA_02"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- casesPack.MainRunClass -->
     </classes>
   </test> <!-- CapstoneTest-0(failed) -->
+  <test thread-count="9" parallel="classes" name="CapstoneTest-2(failed)" verbose="0">
+    <parameter name="platform" value="2"/>
+    <classes>
+      <class name="casesPack.MainRunClass">
+        <methods>
+          <include name="BAA_01"/>
+          <include name="BAA_02"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- casesPack.MainRunClass -->
+    </classes>
+  </test> <!-- CapstoneTest-2(failed) -->
 </suite> <!-- Failed suite [CapstoneSuite] -->

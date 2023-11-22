@@ -1,9 +1,12 @@
 package casesPack;
 
+import java.io.PrintWriter;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.lang.*;
 
 import callPack.SetupEnv;
 
@@ -19,35 +22,59 @@ public class MainRunClass extends SetupEnv{
 	 * 
 	 */
 	@Test(priority=1)
-	public void BAA_01(){
+	public void BAA_01() throws Exception{
 		//Step 1 - Setup run to launch app before class is started
 		
 		//Step 2 - Create an account
 		createAccount().click();
-		nameText().sendKeys("Alvin Kae Cabato");
-		add1Text().sendKeys("96 Nordstrum Residences");
-		add2Text().sendKeys("Quezon City");
-		accNumText().sendKeys("123321");
-		pinNumText().sendKeys("9231");
-		currBalText().sendKeys("15992.0");
+		nameText().sendKeys(configProp.getProperty("user1name"));
+		add1Text().sendKeys(configProp.getProperty("user1add1"));
+		add2Text().sendKeys(configProp.getProperty("user1add2"));
+		accNumText().sendKeys(configProp.getProperty("user1acc"));
+		pinNumText().sendKeys(configProp.getProperty("user1pin"));
+		currBalText().sendKeys(configProp.getProperty("user1currbal"));
 		saveUserBtn().click();
 		mobileAlertHandle();
 		
 		//Step 3 - Login using mpin
 		loginApp().click();	
-		enterPin().sendKeys("9231");
+		enterPin().sendKeys(configProp.getProperty("user1pin"));
 		loginBtn().click();
 		
 		//Step 4 - Click on Account informations
 		accInfo().click();
 		
-		//Step 5 - Validate values from the page is equal to the inputted items
-		Assert.assertEquals(nameView().getText(),"Alvin Kae Cabato");
-		Assert.assertEquals(add1View().getText(),"96 Nordstrum Residences");
-		Assert.assertEquals(add2View().getText(),"Quezon City");
-		Assert.assertEquals(accNumView().getText(),"123321");
-		Assert.assertEquals(pinNumView().getText(),"9231");
-		Assert.assertEquals(currBalView().getText(),"15992.0");	
+		//Step 5 - Validate values from the page is equal to the input items
+		Assert.assertEquals(nameView().getText(),configProp.getProperty("user1name"));
+		Assert.assertEquals(add1View().getText(),configProp.getProperty("user1add1"));
+		Assert.assertEquals(add2View().getText(),configProp.getProperty("user1add2"));
+		Assert.assertEquals(accNumView().getText(),configProp.getProperty("user1acc"));
+		Assert.assertEquals(pinNumView().getText(),configProp.getProperty("user1pin"));
+		Float f = Float.parseFloat(currBalView().getText());
+		Float g = Float.parseFloat(configProp.getProperty("user1currbal"));
+		Assert.assertEquals(f,g);
+		String BAA01_Ver = "";
+		if(nameView().getText().equals(configProp.getProperty("user1name"))
+				&& add1View().getText().equals(configProp.getProperty("user1add1"))
+				&& add2View().getText().equals(configProp.getProperty("user1add2"))
+				&& accNumView().getText().equals(configProp.getProperty("user1acc"))
+				&& pinNumView().getText().equals(configProp.getProperty("user1pin"))
+				&& f.equals(g)
+				) {
+			BAA01_Ver = "Passed";
+		}else {
+			BAA01_Ver = "Failed";
+		}
+		
+		//logging
+		dataLines.add(new String[] {
+				"Timestop start",
+				java.time.LocalDateTime.now().toString()
+		});
+		dataLines.add(new String[] {
+				"BAA_01",
+				BAA01_Ver
+		});
 		
 		//Clean up step - Logging out
 		navigateBack();
@@ -71,15 +98,15 @@ public class MainRunClass extends SetupEnv{
 		
 		//Step 2 - Login into account
 		loginApp().click();	
-		enterPin().sendKeys("9231");
+		enterPin().sendKeys(configProp.getProperty("user1pin"));
 		loginBtn().click();
 		
 		//Step 3 - Click on Add Transaction
 		addTranc().click();
 		
 		//Step 4 - Edit information for transfer
-		editTextDesc().sendKeys("For Loan");
-		editTextAmt().sendKeys("5555");
+		editTextDesc().sendKeys(configProp.getProperty("user1trandesc"));
+		editTextAmt().sendKeys(configProp.getProperty("user1trancamt"));
 		addTrancBtn().click();
 		
 		//Step 5 - Returning after clicking on Alert
@@ -95,9 +122,22 @@ public class MainRunClass extends SetupEnv{
 		String desc, amt;
 		desc = x[0];
 		amt = x[1];
-		Assert.assertEquals(desc,"For Loan");
-		Assert.assertEquals(amt, "5555");
+		Assert.assertEquals(desc,configProp.getProperty("user1trandesc"));
+		Assert.assertEquals(amt, configProp.getProperty("user1trancamt"));
+		String BAA02_Ver = "";
+		if(desc.equals(configProp.getProperty("user1trandesc"))
+				&& amt.equals(configProp.getProperty("user1trancamt"))
+				) {
+			BAA02_Ver = "Passed";
+		}else {
+			BAA02_Ver = "Failed";
+		}
 		
+		//logging
+		dataLines.add(new String[] {
+				"BAA_02",
+				BAA02_Ver
+		});
 		//Clean up Step - Logout and tear down
 		navigateBack();
 		logout().click();
@@ -122,24 +162,24 @@ public class MainRunClass extends SetupEnv{
 		
 		//Step 2 - Create another account 
 		createAccount().click();
-		nameText().sendKeys("Alvin Jae Cabato");
-		add1Text().sendKeys("211 Macapagal Street");
-		add2Text().sendKeys("Paranaque City");
-		accNumText().sendKeys("112411");
-		pinNumText().sendKeys("4522");
-		currBalText().sendKeys("153141.0");
+		nameText().sendKeys(configProp.getProperty("user2name"));
+		add1Text().sendKeys(configProp.getProperty("user2add1"));
+		add2Text().sendKeys(configProp.getProperty("user2add2"));
+		accNumText().sendKeys(configProp.getProperty("user2acc"));
+		pinNumText().sendKeys(configProp.getProperty("user2pin"));
+		currBalText().sendKeys(configProp.getProperty("user2currbal"));
 		saveUserBtn().click();
 		mobileAlertHandle();
 		
 		//Step 3 - Login app using created account
 		loginApp().click();	
-		enterPin().sendKeys("4522");
+		enterPin().sendKeys(configProp.getProperty("user2pin"));
 		loginBtn().click();
 
 		//Step 4 - Transfer money on add transaction
 		addTranc().click();
-		editTextDesc().sendKeys("For Payment");
-		editTextAmt().sendKeys("2432");
+		editTextDesc().sendKeys(configProp.getProperty("user2trandesc"));
+		editTextAmt().sendKeys(configProp.getProperty("user2trancamt"));
 		addTrancBtn().click();
 		
 		//Step 5 - Return by handling the Alert
@@ -155,8 +195,27 @@ public class MainRunClass extends SetupEnv{
 		String desc, amt;
 		desc = x[0];
 		amt = x[1];
-		Assert.assertEquals(desc,"For Payment");
-		Assert.assertEquals(amt, "2432");
+		Assert.assertEquals(desc,configProp.getProperty("user2trandesc"));
+		Assert.assertEquals(amt,configProp.getProperty("user2trancamt"));
+		
+		String BAA03_Ver = "";
+		if(desc.equals(configProp.getProperty("user2trandesc"))
+				&& amt.equals(configProp.getProperty("user2trancamt"))
+				) {
+			BAA03_Ver = "Passed";
+		}else {
+			BAA03_Ver = "Failed";
+		}
+		
+		//logging
+		dataLines.add(new String[] {
+				"BAA_03",
+				BAA03_Ver
+		});
+		dataLines.add(new String[] {
+				"Timestop end",
+				java.time.LocalDateTime.now().toString()
+		});
 	}
 	
 }
