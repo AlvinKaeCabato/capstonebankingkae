@@ -4,7 +4,6 @@
     <test name="CapstoneTest">
         <classes>
             <class name="casesPack.MainRunClass"/>
-           
         </classes>
     </test>
 </suite>

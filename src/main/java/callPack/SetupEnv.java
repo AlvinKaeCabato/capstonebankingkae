@@ -9,15 +9,14 @@ import java.io.PrintWriter;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+
 import java.util.Properties;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -31,6 +30,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
@@ -38,23 +41,22 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class SetupEnv {
+	String SPARK_LOG_FILE = "logs/ExtentSparkReport_" + java.time.LocalDate.now()+".html";
+	protected ExtentReports report = new ExtentReports();
+	ExtentSparkReporter spark = new ExtentSparkReporter(SPARK_LOG_FILE);
+	
+	
 	//For Browserstack and driver
 	
 	String userName = System.getenv("BROWSERSTACK_USERNAME");
-	//"alvinkaecabato_Avn8dc";
 	String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-	//"JJPHDKxYzHu68nd6MVS7";
-	//String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
 	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-	//"Capstone Build Kae";
-	//String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
 	String app = System.getenv("BROWSERSTACK_APP_ID");
     public AndroidDriver driver;
     
     //For Input/OutputFiles
     protected FileInputStream configFis;
     public File outputCsv;
-    private final String CONFIG_FILE_PATH2="//src//main//resources//input.properties";
     private final String CONFIG_FILE_PATH="//src//main//resources//input.xlsx";
     private final String LOG_OUTPUT_FILE="//logs//Log_" + java.time.LocalDate.now();
     private final String FINAL_LOG_FILE = LOG_OUTPUT_FILE;
@@ -68,6 +70,11 @@ public class SetupEnv {
     
     @BeforeClass(alwaysRun=true)
     public void setUp() throws Exception {
+    	
+    	//REPORT
+    	report.attachReporter(spark);
+    	
+    	
     	
     	//input files
     	configFis = new FileInputStream(file.getAbsoluteFile()
@@ -105,43 +112,19 @@ public class SetupEnv {
             configProp.setProperty(a,b);
         }
         
-    	/*
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("app", app);
-        caps.setCapability("device", "Samsung Galaxy S21");
-        caps.setCapability("build", buildName);
-        driver = new AndroidDriver(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);
-    	*/
+
     	System.out.println("HERE_-------------------------->>>: " + buildName);
-    	System.out.println("HERE_-------------------------->>>: ");
-    	System.out.println("HERE_-------------------------->>>: ");
-    	System.out.println("HERE_-------------------------->>>: ");
-    	System.out.println("HERE_-------------------------->>>: ");
     	System.out.println("HERE_-------------------------->>>: " + userName);
-    	System.out.println("HERE_-------------------------->>>: ");
-    	System.out.println("HERE_-------------------------->>>: ");
-    	System.out.println("HERE_-------------------------->>>: ");
     	System.out.println("HERE_-------------------------->>>: " + accessKey);
     	
         MutableCapabilities capabilities = new UiAutomator2Options();
-		//capabilities.setCapability("deviceName", "Samsung Galaxy S21");
-		//capabilities.setCapability("os_version", "12.0");
 		capabilities.setCapability("Project", "API demo App automation");
 		capabilities.setCapability("build", buildName);
 		capabilities.setCapability("name", "Capstone Test");
         capabilities.setCapability("app", "bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c");
         driver = new AndroidDriver(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"),capabilities);
-        /*
-		UiAutomator2Options options = new UiAutomator2Options();
-		
-		options.setUdid("RF8N403BDGA");
-		options.setCapability("appium:appPackage","io.appium.android.apis");
-		options.setCapability("appium:appActivity","io.appium.android.apis.ApiDemos");
-		options.setCapability("platformName", "Android");
-		options.setCapability("appium:platformVersion", "12");
-		options.setCapability("appium:automationName","uiautomator2");
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
-		*/
+        report.createTest("Setup").log(Status.PASS, "App Launched!");
+
     }
 
     @AfterClass(alwaysRun=true)

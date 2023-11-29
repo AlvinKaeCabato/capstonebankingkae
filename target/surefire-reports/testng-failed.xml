@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="9" parallel="tests" name="Failed suite [CapstoneSuite]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="9" parallel="classes" name="CapstoneTest-1(failed)" verbose="0">
-    <parameter name="platform" value="1"/>
-    <classes>
-      <class name="casesPack.MainRunClass">
-        <methods>
-          <include name="BAA_01"/>
-          <include name="BAA_02"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- casesPack.MainRunClass -->
-    </classes>
-  </test> <!-- CapstoneTest-1(failed) -->
   <test thread-count="9" parallel="classes" name="CapstoneTest-0(failed)" verbose="0">
     <parameter name="platform" value="0"/>
     <classes>
@@ -21,6 +8,7 @@
         <methods>
           <include name="BAA_01"/>
           <include name="BAA_02"/>
+          <include name="BAA_03"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
@@ -34,10 +22,25 @@
         <methods>
           <include name="BAA_01"/>
           <include name="BAA_02"/>
+          <include name="BAA_03"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- casesPack.MainRunClass -->
     </classes>
   </test> <!-- CapstoneTest-2(failed) -->
+  <test thread-count="9" parallel="classes" name="CapstoneTest-1(failed)" verbose="0">
+    <parameter name="platform" value="1"/>
+    <classes>
+      <class name="casesPack.MainRunClass">
+        <methods>
+          <include name="BAA_01"/>
+          <include name="BAA_02"/>
+          <include name="BAA_03"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- casesPack.MainRunClass -->
+    </classes>
+  </test> <!-- CapstoneTest-1(failed) -->
 </suite> <!-- Failed suite [CapstoneSuite] -->
