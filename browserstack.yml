@@ -36,18 +36,18 @@ app: bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
 
 platforms:
-  - deviceName: Samsung Galaxy S23 Ultra
-    osVersion: 13.0
-    platformName: android
-  - deviceName: Samsung Galaxy S21
-    osVersion: 11.0
-    platformName: android
+ # - deviceName: Samsung Galaxy S23 Ultra
+  #  osVersion: 13.0
+ #   platformName: android
+  #- deviceName: Samsung Galaxy S21
+   # osVersion: 11.0
+  #  platformName: android
   - deviceName: Google Pixel 6 Pro
     osVersion: 12.0
     platformName: android
  # - deviceName: iPhone 13
- #   osVersion: 17
- # - os: OS X
+#    osVersion: 17
+#  - os: OS X
  #   osVersion: Sonoma
 
 

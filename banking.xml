@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="CapstoneSuite">
-    <test name="CapstoneTest">
+    <test name="Capstone_Test">
         <classes>
-            <class name="casesPack.MainRunClass"/>
+			<class name="casesPack.MainRunClass">
+				<methods>
+				<!--  
+					<include name="BAA_01"/>
+					<include name="BAA_02"/>
+					-->
+					<include name="BAA_03"/>
+				</methods>
+			</class>
         </classes>
     </test>
+ 
 </suite>

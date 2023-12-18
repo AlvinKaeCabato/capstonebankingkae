@@ -1,5 +1,7 @@
 package callPack;
 
+import utilsPack.ExtentReportsUtil;
+import utilsPack.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,9 +9,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
-
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,6 +20,7 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -24,15 +28,22 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.MutableCapabilities;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.testng.ITestResult;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -40,14 +51,9 @@ import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
-public class SetupEnv {
-	String SPARK_LOG_FILE = "logs/ExtentSparkReport_" + java.time.LocalDate.now()+".html";
-	protected ExtentReports report = new ExtentReports();
-	ExtentSparkReporter spark = new ExtentSparkReporter(SPARK_LOG_FILE);
-	
-	
+
+public class SetupEnv {	
 	//For Browserstack and driver
-	
 	String userName = System.getenv("BROWSERSTACK_USERNAME");
 	String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
@@ -56,38 +62,45 @@ public class SetupEnv {
     
     //For Input/OutputFiles
     protected FileInputStream configFis;
+    protected FileInputStream configFisVer;
     public File outputCsv;
-    private final String CONFIG_FILE_PATH="//src//main//resources//input.xlsx";
-    private final String LOG_OUTPUT_FILE="//logs//Log_" + java.time.LocalDate.now();
+    private final String CONFIG_FILE_PATH="//src//main//resources//inputFail1.xlsx";
+    private final String VERIFY_FILE_PATH="//src//main//resources//VerifyPass.xlsx";
+    private final String LOG_OUTPUT_FILE="\\Reports\\ExtRepLog_" + java.time.LocalDate.now()+".html";
     private final String FINAL_LOG_FILE = LOG_OUTPUT_FILE;
+    private final String CSV_LOG_OUTPUT_FILE="\\logs\\Log_" + java.time.LocalDate.now();
+    private final String CSV_FINAL_LOG_FILE = CSV_LOG_OUTPUT_FILE;
     public static Properties configProp = new Properties();
+    public static Properties configVer = new Properties();
     protected File file = new File("");
+    protected File fileVer = new File("");
     protected File logfile = new File("");
     public List<String[]> dataLines = new ArrayList<>();
-    public static XSSFWorkbook workbook;
-    public static XSSFSheet sheet;
-    public static XSSFRow row;
+    public static XSSFWorkbook workbook,workbookVer;
+    public static XSSFSheet sheet,sheetVer;
+    public static XSSFRow row,rowVer;
+    
+    public static int fail;
+    
+    @BeforeSuite
+	public void setupReport() {
+		ExtentReportsUtil.startExtentReport(FINAL_LOG_FILE);
+	}  
     
     @BeforeClass(alwaysRun=true)
     public void setUp() throws Exception {
-    	
-    	//REPORT
-    	report.attachReporter(spark);
-    	
-    	
-    	
+    	fail = 0;    	
     	//input files
     	configFis = new FileInputStream(file.getAbsoluteFile()
     			+ CONFIG_FILE_PATH);
-    	//configProp.load(configFis);
-    	outputCsv = new File(logfile.getAbsoluteFile()
-    			+ FINAL_LOG_FILE);
+    	outputCsv = new File(logfile.getAbsoluteFile()+ CSV_FINAL_LOG_FILE);
     	
+    	//Workbook for input items
     	try {
     	configFis = new FileInputStream(file.getAbsoluteFile()
         			+ CONFIG_FILE_PATH);
         workbook = new XSSFWorkbook(configFis);
-        sheet = workbook.getSheet("Input");
+        sheet = workbook.getSheet("in");
         System.out.println("Opening workbook");
     	}catch(FileNotFoundException e) {
     		e.printStackTrace();
@@ -112,21 +125,47 @@ public class SetupEnv {
             configProp.setProperty(a,b);
         }
         
-
-    	System.out.println("HERE_-------------------------->>>: " + buildName);
-    	System.out.println("HERE_-------------------------->>>: " + userName);
-    	System.out.println("HERE_-------------------------->>>: " + accessKey);
+        
+      //Workbook for verification items
+    	try {
+    	configFisVer = new FileInputStream(fileVer.getAbsoluteFile()
+        			+ VERIFY_FILE_PATH);
+        workbookVer = new XSSFWorkbook(configFisVer);
+        sheetVer = workbookVer.getSheet("in");
+        System.out.println("Opening workbook");
+    	}catch(FileNotFoundException e) {
+    		e.printStackTrace();
+    	}catch (IOException e) {
+            e.printStackTrace();
+        }
     	
+        try {
+            configFisVer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }  
+        
+        Iterator<Row> rowIteratorVer = sheetVer.iterator();
+        DataFormatter formatterVer = new DataFormatter();
+        String c,d;
+        while( rowIteratorVer.hasNext() )
+        {
+            Row rowVer = rowIteratorVer.next();
+            c = formatterVer.formatCellValue(rowVer.getCell(0));
+            d = formatterVer.formatCellValue(rowVer.getCell(1));
+            configVer.setProperty(c,d);
+        }
+        
+        //Setup driver
         MutableCapabilities capabilities = new UiAutomator2Options();
 		capabilities.setCapability("Project", "API demo App automation");
 		capabilities.setCapability("build", buildName);
 		capabilities.setCapability("name", "Capstone Test");
         capabilities.setCapability("app", "bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c");
         driver = new AndroidDriver(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"),capabilities);
-        report.createTest("Setup").log(Status.PASS, "App Launched!");
-
+        
     }
-
+    
     @AfterClass(alwaysRun=true)
     public void tearDown() throws Exception {
         try (PrintWriter pw = new PrintWriter(outputCsv)) {
@@ -137,178 +176,7 @@ public class SetupEnv {
         driver.quit();
     }
     
-    /*--
-     * 
-     * 
-     * Main Page
-     * 
-     * 
-     */
-    
-	public WebElement createAccount() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("createAccount")));
-	}
-	
-	public WebElement loginApp() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("loginButton")));
-	}
-    
-    /*
-     * 
-     * Create Account Page 
-     * 
-     * 
-     */
-	public WebElement nameText() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Name")));
-	}
-	
-	public WebElement add1Text() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Address1")));
-	}
-	
-	public WebElement add2Text() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Address2")));
-	}
-	
-	public WebElement accNumText() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("AccountNumber")));	
-	}
-	public WebElement pinNumText() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("PINno")));
-	}
-	
-	public WebElement currBalText() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("Balance")));
-	}
-	
-	public WebElement saveUserBtn() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("saveUser")));
-	}
-	
-	public WebElement alertTitle() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("alertTitle")));
-	}
-	public WebElement alertOK() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("button3")));
-	}
-	
-	
-	/*
-	 * 
-	 * Login Page
-	 * 
-	 */
-	public WebElement enterPin() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("enteredPIN")));
-	}
-	public WebElement loginBtn() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("loginButton")));
-	}
-	/*
-	 * 
-	 * User Page
-	 * 
-	 * 
-	 */
-	public WebElement accInfo() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("button")));
-	}
-	
-	public WebElement addTranc() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("buttonAddTrans")));
-	}
-	
-	public WebElement viewTranc() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("buttonViewTrans")));
-	}
-	
-	public WebElement logout() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("buttonLogout")));
-	}
-	
-	/*
-	 * 
-	 * Account page
-	 * 
-	 */
-	public WebElement nameView() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewName")));
-	}
-	
-	public WebElement add1View() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewAddress1")));
-	}
-	
-	public WebElement add2View() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewAddress2")));
-	}
-	
-	public WebElement accNumView() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewAccNo")));
-	}
-	
-	public WebElement pinNumView() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewPIN")));
-	}
-	
-	public WebElement currBalView() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewBalance")));
-	}
-	
-	/*
-	 * 
-	 * 
-	 * Add Transaction
-	 * 
-	 * 
-	 * 
-	 */
-	public WebElement editTextDesc() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("editTextDecription")));
-	}
-	public WebElement editTextAmt() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("editTextAmount")));
-	}
-	public WebElement addTrancBtn() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("button2")));
-	}
-	
-	/*
-	 * 
-	 * View Transaction
-	 * 
-	 */
-	public WebElement viewTrancText() {
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(
-		          ExpectedConditions.elementToBeClickable(AppiumBy.id("textViewTransactions")));
-	}
+
 	/*
 	 * GENERAL
 	 * 
@@ -328,6 +196,7 @@ public class SetupEnv {
 	    if (isAlertPresent()) {
 	        Alert alert = driver.switchTo().alert();
 	        alert.accept();
+	        
 	   }
 	}
 	public void navigateBack() {
@@ -346,8 +215,18 @@ public class SetupEnv {
 	    }
 	    return escapedData;
 	}
-
-
+    @AfterMethod(alwaysRun=true)
+    public void afterMethod(ITestResult result) throws Exception {		    	
+    	ExtentReportsUtil.getExtentResult(result);
+		Logger.log("Results Retrieved");
+    }
+    
+    @AfterSuite
+	public void endTest() {
+		ExtentReportsUtil.flushExtentReport();
+		ExtentReportsUtil.closeExtentReport();
+		Logger.log("End Report");
+	}
 
 	   
 }

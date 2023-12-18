@@ -1,0 +1,170 @@
+# Created at 2023-12-15T00:00:51.174
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+
+# Created at 2023-12-15T00:00:52.232
+Unexpected IOException with stream: loginButton was Clicked
+
+# Created at 2023-12-15T00:00:52.236
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:00:53.415
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-15T00:00:53.416
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:00:55.222
+Unexpected IOException with stream: loginButton was Clicked
+
+# Created at 2023-12-15T00:00:55.223
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:00:56.198
+Unexpected IOException with stream:  Send text value to element: enteredPIN
+
+# Created at 2023-12-15T00:00:56.199
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:00:56.308
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-15T00:00:56.309
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:00:57.931
+Unexpected IOException with stream: loginButton was Clicked
+
+# Created at 2023-12-15T00:00:57.931
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:00:59.838
+Unexpected IOException with stream:  Send text value to element: enteredPIN
+
+# Created at 2023-12-15T00:00:59.839
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:00.816
+Unexpected IOException with stream: loginButton was Clicked
+
+# Created at 2023-12-15T00:01:00.817
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:03.331
+Unexpected IOException with stream:  Send text value to element: enteredPIN
+
+# Created at 2023-12-15T00:01:03.332
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:03.905
+Unexpected IOException with stream: loginButton was Clicked
+
+# Created at 2023-12-15T00:01:03.906
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:04.366
+Unexpected IOException with stream: button was Clicked
+
+# Created at 2023-12-15T00:01:04.367
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:07.940
+Unexpected IOException with stream: button was Clicked
+
+# Created at 2023-12-15T00:01:07.941
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:08.410
+Unexpected IOException with stream: loginButton was Clicked
+
+# Created at 2023-12-15T00:01:08.410
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:10.297
+Unexpected IOException with stream: Alvin Kae Ledesma CabatofromtextViewName is the same as input value: Alvin Kae Ledesma Cabato
+
+# Created at 2023-12-15T00:01:10.298
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:13.582
+Unexpected IOException with stream: Alvin Kae Ledesma CabatofromtextViewName is the same as input value: Alvin Kae Ledesma Cabato
+
+# Created at 2023-12-15T00:01:13.583
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:14.834
+Unexpected IOException with stream: button was Clicked
+
+# Created at 2023-12-15T00:01:14.836
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:15.084
+Unexpected IOException with stream: 96 Nordstrum ResidencesfromtextViewAddress1 is the same as input value: 96 Nordstrum Residences
+
+# Created at 2023-12-15T00:01:15.085
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:18.270
+Unexpected IOException with stream: 96 Nordstrum ResidencesfromtextViewAddress1 is the same as input value: 96 Nordstrum Residences
+
+# Created at 2023-12-15T00:01:18.271
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:19.879
+Unexpected IOException with stream: Quezon CityfromtextViewAddress2 is the same as input value: Quezon City
+
+# Created at 2023-12-15T00:01:19.881
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:22.455
+Unexpected IOException with stream: Alvin Kae Ledesma CabatofromtextViewName is the same as input value: Alvin Kae Ledesma Cabato
+
+# Created at 2023-12-15T00:01:22.456
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:22.900
+Unexpected IOException with stream: Quezon CityfromtextViewAddress2 is the same as input value: Quezon City
+
+# Created at 2023-12-15T00:01:22.901
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:24.454
+Unexpected IOException with stream: 123321fromtextViewAccNo is the same as input value: 123321
+
+# Created at 2023-12-15T00:01:24.455
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-15T00:01:27.285
+Unexpected IOException with stream: 123321fromtextViewAccNo is the same as input value: 123321
+
+# Created at 2023-12-15T00:01:27.286
+Unexpected IOException with stream: 
+
+

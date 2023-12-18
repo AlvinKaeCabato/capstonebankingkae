@@ -1,0 +1,90 @@
+# Created at 2023-12-11T12:31:13.116
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+
+# Created at 2023-12-11T12:31:14.274
+Unexpected IOException with stream: BAA_03 - Combined Use Case
+
+# Created at 2023-12-11T12:31:14.275
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:14.288
+Unexpected IOException with stream: Opening workbook
+
+# Created at 2023-12-11T12:31:14.288
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:14.289
+Unexpected IOException with stream: HERE_-------------------------->>>: jenkins-CapstoneProjectKae-594
+
+# Created at 2023-12-11T12:31:14.290
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:14.290
+Unexpected IOException with stream: HERE_-------------------------->>>: alvinkaecabato_Avn8dc-jenkins
+
+# Created at 2023-12-11T12:31:14.290
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:14.290
+Unexpected IOException with stream: HERE_-------------------------->>>: JJPHDKxYzHu68nd6MVS7
+
+# Created at 2023-12-11T12:31:14.291
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:45.476
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-11T12:31:45.477
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:48.071
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-11T12:31:48.072
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:51.626
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-11T12:31:51.626
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:31:56.720
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-11T12:31:56.720
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:32:01.158
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-11T12:32:01.160
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:32:02.491
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-11T12:32:02.492
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-11T12:32:06.284
+Unexpected IOException: 6,1,casesPack.MainRunClass,BAA_03(casesPack.MainRunClass),null,null,null
+
+

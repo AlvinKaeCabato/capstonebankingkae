@@ -1,0 +1,10 @@
+# Created at 2023-12-07T00:09:51.439
+Corrupted STDOUT by directly writing to native stream in forked JVM 1. Stream '[[1;31mERROR[0;39m] [2023-12-06T16:09:51.431187500Z][ OBSERVABILITY ] EXCEPTION IN launchTestSession REQUEST TO TEST OBSERVABILITY : java.net.SocketException: Network is unreachable: no further information'.
+java.lang.IllegalArgumentException: Stream stdin corrupted. Expected comma after third character in command '[[1;31mERROR[0;39m] [2023-12-06T16:09:51.431187500Z][ OBSERVABILITY ] EXCEPTION IN launchTestSession REQUEST TO TEST OBSERVABILITY : java.net.SocketException: Network is unreachable: no further information'.
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient$OperationalData.<init>(ForkClient.java:507)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.processLine(ForkClient.java:210)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.consumeLine(ForkClient.java:177)
+	at org.apache.maven.plugin.surefire.booterclient.output.ThreadedStreamConsumer$Pumper.run(ThreadedStreamConsumer.java:88)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+

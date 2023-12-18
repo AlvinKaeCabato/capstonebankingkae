@@ -1,0 +1,58 @@
+# Created at 2023-12-07T09:40:41.548
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+
+# Created at 2023-12-07T09:40:56.491
+Unexpected IOException: 5,1,casesPack.MainRunClass,BAA_01(casesPack.MainRunClass),casesPack.MainRunClass,null,null
+
+
+# Created at 2023-12-07T09:40:56.494
+Unexpected IOException: 5,1,casesPack.MainRunClass,BAA_01(casesPack.MainRunClass),casesPack.MainRunClass,null,null
+
+
+# Created at 2023-12-07T09:40:59.332
+Unexpected IOException: 5,1,casesPack.MainRunClass,BAA_01(casesPack.MainRunClass),casesPack.MainRunClass,null,null
+
+
+# Created at 2023-12-07T09:41:10.875
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-07T09:41:10.876
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-07T09:41:12.805
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-07T09:41:12.806
+Unexpected IOException with stream: 
+
+
+# Created at 2023-12-07T09:41:22.134
+Unexpected IOException: 8,1,casesPack.MainRunClass,BAA_01(casesPack.MainRunClass),null,expected [96 Nordstrum Residences] but found [SWAAAL],null,expected [96 Nordstrum Residences] but found [SWAAAL],MainRunClass.BAA_01:63 expected [96 Nordstrum Residences] but found [SWAAAL],java.lang.AssertionError: expected [96 Nordstrum Residences] but found [SWAAAL]\000A\0009at casesPack.MainRunClass.BAA_01(MainRunClass.java:63)\000A
+
+
+# Created at 2023-12-07T09:41:22.135
+Unexpected IOException: 5,1,casesPack.MainRunClass,BAA_02(casesPack.MainRunClass),casesPack.MainRunClass,null,null
+
+
+# Created at 2023-12-07T09:41:23.577
+Unexpected IOException: 8,1,casesPack.MainRunClass,BAA_01(casesPack.MainRunClass),null,expected [96 Nordstrum Residences] but found [SWAAAL],null,expected [96 Nordstrum Residences] but found [SWAAAL],MainRunClass.BAA_01:63 expected [96 Nordstrum Residences] but found [SWAAAL],java.lang.AssertionError: expected [96 Nordstrum Residences] but found [SWAAAL]\000A\0009at casesPack.MainRunClass.BAA_01(MainRunClass.java:63)\000A
+
+
+# Created at 2023-12-07T09:41:23.579
+Unexpected IOException: 5,1,casesPack.MainRunClass,BAA_02(casesPack.MainRunClass),casesPack.MainRunClass,null,null
+
+
+# Created at 2023-12-07T09:41:26.735
+Unexpected IOException with stream: ALERT IS PRESENT !! 
+
+# Created at 2023-12-07T09:41:26.736
+Unexpected IOException with stream: 
+
+

@@ -1,81 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-29T14:06:52 CST" name="CapstoneSuite" finished-at="2023-11-29T14:09:51 CST" duration-ms="179032">
+  <suite started-at="2023-12-18T11:43:02 CST" name="CapstoneSuite" finished-at="2023-12-18T11:45:14 CST" duration-ms="131906">
     <groups>
     </groups>
-    <test started-at="2023-11-29T14:06:52 CST" name="CapstoneTest-0" finished-at="2023-11-29T14:09:33 CST" duration-ms="161355">
+    <test started-at="2023-12-18T11:43:02 CST" name="Capstone_Test-0" finished-at="2023-12-18T11:45:14 CST" duration-ms="131906">
       <class name="casesPack.MainRunClass">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.MainRunClass@325bb9a6]" started-at="2023-11-29T14:06:52 CST" name="setUp" finished-at="2023-11-29T14:07:17 CST" duration-ms="25276" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:casesPack.MainRunClass@6d367020]" started-at="2023-12-18T11:43:02 CST" name="setupReport" finished-at="2023-12-18T11:43:02 CST" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupReport -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.MainRunClass@6d367020]" started-at="2023-12-18T11:43:02 CST" name="setUp" finished-at="2023-12-18T11:43:28 CST" duration-ms="25571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="BAA_01()[pri:1, instance:casesPack.MainRunClass@325bb9a6]" started-at="2023-11-29T14:07:17 CST" name="BAA_01" finished-at="2023-11-29T14:07:55 CST" duration-ms="37646" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_01 -->
-        <test-method signature="BAA_02()[pri:2, instance:casesPack.MainRunClass@325bb9a6]" started-at="2023-11-29T14:07:56 CST" name="BAA_02" finished-at="2023-11-29T14:08:23 CST" duration-ms="26933" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_02 -->
-        <test-method signature="BAA_03()[pri:3, instance:casesPack.MainRunClass@325bb9a6]" started-at="2023-11-29T14:08:29 CST" name="BAA_03" finished-at="2023-11-29T14:09:30 CST" duration-ms="60957" status="PASS">
+        <test-method signature="BAA_03()[pri:0, instance:casesPack.MainRunClass@6d367020]" started-at="2023-12-18T11:43:28 CST" name="BAA_03" finished-at="2023-12-18T11:45:10 CST" duration-ms="101572" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BAA_03 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.MainRunClass@325bb9a6]" started-at="2023-11-29T14:09:30 CST" name="tearDown" finished-at="2023-11-29T14:09:33 CST" duration-ms="2622" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.MainRunClass@6d367020]" started-at="2023-12-18T11:45:10 CST" name="afterMethod" finished-at="2023-12-18T11:45:10 CST" duration-ms="78" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BAA_03 status=SUCCESS method=MainRunClass.BAA_03()[pri:0, instance:casesPack.MainRunClass@6d367020] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.MainRunClass@6d367020]" started-at="2023-12-18T11:45:11 CST" name="tearDown" finished-at="2023-12-18T11:45:14 CST" duration-ms="3760" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:casesPack.MainRunClass@6d367020]" started-at="2023-12-18T11:45:14 CST" name="endTest" finished-at="2023-12-18T11:45:15 CST" duration-ms="227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
       </class> <!-- casesPack.MainRunClass -->
-    </test> <!-- CapstoneTest-0 -->
-    <test started-at="2023-11-29T14:06:52 CST" name="CapstoneTest-1" finished-at="2023-11-29T14:09:42 CST" duration-ms="169906">
-      <class name="casesPack.MainRunClass">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.MainRunClass@45792847]" started-at="2023-11-29T14:06:52 CST" name="setUp" finished-at="2023-11-29T14:07:18 CST" duration-ms="26512" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="BAA_01()[pri:1, instance:casesPack.MainRunClass@45792847]" started-at="2023-11-29T14:07:18 CST" name="BAA_01" finished-at="2023-11-29T14:07:56 CST" duration-ms="37808" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_01 -->
-        <test-method signature="BAA_02()[pri:2, instance:casesPack.MainRunClass@45792847]" started-at="2023-11-29T14:07:57 CST" name="BAA_02" finished-at="2023-11-29T14:08:21 CST" duration-ms="24244" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_02 -->
-        <test-method signature="BAA_03()[pri:3, instance:casesPack.MainRunClass@45792847]" started-at="2023-11-29T14:08:25 CST" name="BAA_03" finished-at="2023-11-29T14:09:39 CST" duration-ms="73494" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_03 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.MainRunClass@45792847]" started-at="2023-11-29T14:09:39 CST" name="tearDown" finished-at="2023-11-29T14:09:42 CST" duration-ms="2232" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- casesPack.MainRunClass -->
-    </test> <!-- CapstoneTest-1 -->
-    <test started-at="2023-11-29T14:06:52 CST" name="CapstoneTest-2" finished-at="2023-11-29T14:09:51 CST" duration-ms="179032">
-      <class name="casesPack.MainRunClass">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.MainRunClass@675ffd1d]" started-at="2023-11-29T14:06:52 CST" name="setUp" finished-at="2023-11-29T14:07:22 CST" duration-ms="30728" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="BAA_01()[pri:1, instance:casesPack.MainRunClass@675ffd1d]" started-at="2023-11-29T14:07:22 CST" name="BAA_01" finished-at="2023-11-29T14:07:58 CST" duration-ms="35390" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_01 -->
-        <test-method signature="BAA_02()[pri:2, instance:casesPack.MainRunClass@675ffd1d]" started-at="2023-11-29T14:07:59 CST" name="BAA_02" finished-at="2023-11-29T14:08:25 CST" duration-ms="26089" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_02 -->
-        <test-method signature="BAA_03()[pri:3, instance:casesPack.MainRunClass@675ffd1d]" started-at="2023-11-29T14:08:29 CST" name="BAA_03" finished-at="2023-11-29T14:09:47 CST" duration-ms="78040" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BAA_03 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.MainRunClass@675ffd1d]" started-at="2023-11-29T14:09:48 CST" name="tearDown" finished-at="2023-11-29T14:09:51 CST" duration-ms="2582" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- casesPack.MainRunClass -->
-    </test> <!-- CapstoneTest-2 -->
+    </test> <!-- Capstone_Test-0 -->
   </suite> <!-- CapstoneSuite -->
 </testng-results>

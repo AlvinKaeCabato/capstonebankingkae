@@ -30,6 +30,11 @@
             <version>4.13.0</version>
         </dependency>
         <dependency>
+	    	<groupId>com.relevantcodes</groupId>
+	    	<artifactId>extentreports</artifactId>
+	    	<version>2.41.2</version>
+		</dependency>
+        <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>8.3.0</version>
@@ -96,6 +101,7 @@
                         <suiteXmlFile>banking.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>-javaagent:${com.browserstack:browserstack-java-sdk:jar}</argLine>
+                    
                 </configuration>
             </plugin>
             <plugin>
@@ -105,6 +111,8 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <meminitial>2048m</meminitial>
+                    <maxmem>8196m</maxmem>
                 </configuration>
             </plugin>
         </plugins>

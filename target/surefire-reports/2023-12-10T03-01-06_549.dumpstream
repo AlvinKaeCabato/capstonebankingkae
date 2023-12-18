@@ -1,0 +1,36 @@
+# Created at 2023-12-10T03:05:20.252
+com.browserstack.utils.BrowserStackSDKException: Initialization of BrowserStack Local failed Could not connect to local.browserstack.com due to Network issues. Please check your internet connection or if you are behind proxy please use our proxy options. For more details https://www.browserstack.com/local-testing#modifiers.
+
+# Created at 2023-12-10T03:05:20.252
+	at com.browserstack.LocalFactory.<init>(Unknown Source)
+
+# Created at 2023-12-10T03:05:20.252
+	at com.browserstack.LocalFactory.createInstance(Unknown Source)
+
+# Created at 2023-12-10T03:05:20.255
+	at com.browserstack.BrowserStackJavaAgent.d(Unknown Source)
+
+# Created at 2023-12-10T03:05:20.255
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+
+# Created at 2023-12-10T03:05:20.255
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+
+# Created at 2023-12-10T03:05:20.255
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+# Created at 2023-12-10T03:05:20.256
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+
+# Created at 2023-12-10T03:05:20.256
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+# Created at 2023-12-10T03:05:20.256
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+# Created at 2023-12-10T03:05:20.256
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+
+# Created at 2023-12-10T03:05:20.256
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+
