@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-CapstoneSuite" class="navigator-link ">
-                    <span>C:\Users\COLLABERA.DIGITAL\CapstoneBanking\CapstoneBanking\banking.xml</span>
+                    <span>C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\banking.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,6 +102,16 @@
                       <a href="#" panel-name="suite-CapstoneSuite" class="show-methods passed suite-CapstoneSuite"> (show)</a> <!-- show-methods passed suite-CapstoneSuite -->
                     </span>
                     <div class="method-list-content passed suite-CapstoneSuite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.MainRunClass" class="method navigator-link" hash-for-method="BAA_01">BAA_01</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.MainRunClass" class="method navigator-link" hash-for-method="BAA_02">BAA_02</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.MainRunClass" class="method navigator-link" hash-for-method="BAA_03">BAA_03</a> <!-- method navigator-link -->
@@ -127,6 +137,20 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="BAA_01">
+                  </a> <!-- BAA_01 -->
+                  <span class="method-name">BAA_01</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="BAA_02">
+                  </a> <!-- BAA_02 -->
+                  <span class="method-name">BAA_02</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="BAA_03">
                   </a> <!-- BAA_03 -->
                   <span class="method-name">BAA_03</span>
@@ -137,7 +161,7 @@
         </div> <!-- panel CapstoneSuite -->
         <div panel-name="test-xml-CapstoneSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\COLLABERA.DIGITAL\CapstoneBanking\CapstoneBanking\banking.xml</span>
+            <span class="header-content">C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\banking.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -149,6 +173,8 @@
     &lt;classes&gt;
       &lt;class name=&quot;casesPack.MainRunClass&quot;&gt;
         &lt;methods&gt;
+          &lt;include name=&quot;BAA_01&quot;/&gt;
+          &lt;include name=&quot;BAA_02&quot;/&gt;
           &lt;include name=&quot;BAA_03&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- casesPack.MainRunClass --&gt;
@@ -191,16 +217,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'BAA_03')
 data.setCell(0, 2, 'casesPack.MainRunClass')
-data.setCell(0, 3, 101572);
+data.setCell(0, 3, 128020);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'BAA_01')
+data.setCell(1, 2, 'casesPack.MainRunClass')
+data.setCell(1, 3, 82181);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'BAA_02')
+data.setCell(2, 2, 'casesPack.MainRunClass')
+data.setCell(2, 3, 63038);
 window.suiteTableData['CapstoneSuite']= { tableData: data, tableDiv: 'times-div-CapstoneSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-CapstoneSuite">
               </div> <!-- times-div-CapstoneSuite -->
             </div> <!-- times-div -->
@@ -215,18 +249,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-CapstoneSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">casesPack.MainRunClass</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">BAA_02</span>
-                <br/>
-                <span class="ignored-method-name">BAA_01</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-CapstoneSuite" class="panel">
@@ -242,23 +267,39 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">167 ms</span>
+                <span class="method-start">247 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <span class="method-name">BAA_01</span>
+                <span class="method-start">30418 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=BAA_01 status=SUCCESS method=MainRunClass.BAA_01()[pri:0, instance:casesPack.MainRu...)</span>
+                <span class="method-start">113988 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">BAA_02</span>
+                <span class="method-start">114573 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=BAA_02 status=SUCCESS method=MainRunClass.BAA_02()[pri:0, instance:casesPack.MainRu...)</span>
+                <span class="method-start">181165 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
                 <span class="method-name">BAA_03</span>
-                <span class="method-start">25749 ms</span>
+                <span class="method-start">181450 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=BAA_03 status=SUCCESS method=MainRunClass.BAA_03()[pri:0, instance:casesPack.MainRu...)</span>
-                <span class="method-start">128083 ms</span>
+                <span class="method-start">310493 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">128235 ms</span>
+                <span class="method-start">311036 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">endTest</span>
-                <span class="method-start">132080 ms</span>
+                <span class="method-start">313689 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

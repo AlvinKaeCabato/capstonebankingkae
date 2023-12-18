@@ -73,8 +73,16 @@
    		 <artifactId>extentreports</artifactId>
    		 <version>5.1.1</version>
 		</dependency>
-		
-
+		<dependency>
+   		  <groupId>com.guicedee.services</groupId>
+  		  <artifactId>sl4j</artifactId>
+  		  <version>1.0.13.5</version>
+		</dependency>
+		<dependency>
+  		  <groupId>org.apache.logging.log4j</groupId>
+  		  <artifactId>log4j-api</artifactId>
+   		  <version>2.22.0</version>
+		</dependency>
    	 </dependencies>
    	 
 
@@ -111,11 +119,13 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <meminitial>2048m</meminitial>
-                    <maxmem>8196m</maxmem>
+                    <meminitial>2048M</meminitial>
+                    <maxmem>4096M</maxmem>
                 </configuration>
             </plugin>
+            
         </plugins>
+        
     </build>
 
     <profiles>

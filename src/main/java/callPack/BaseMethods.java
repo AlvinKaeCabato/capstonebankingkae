@@ -161,13 +161,13 @@ public class BaseMethods {
 		if (enteredText == true) {
 			System.out.println(" Send text value to element: " + element[1]);	
 			ExtentReportsUtil.pass(" Send text value to element: " + element[1]);
-			//ExtentReportsUtil.logger.log(LogStatus.PASS, ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
+			ExtentReportsUtil.logger.log(LogStatus.PASS, ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
 		}
 		else {
 			System.out.println(" Unable to send text value to element: " + element[1]);	
 			ExtentReportsUtil.fail(" Unable to send text value to element: " + element[1]);
 			SetupEnv.fail = 1;
-			//ExtentReportsUtil.logger.log(LogStatus.FAIL, ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+			ExtentReportsUtil.logger.log(LogStatus.FAIL, ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 	}
 	
@@ -291,11 +291,11 @@ public class BaseMethods {
 		}
 		if(retrieved == true) {
 			ExtentReportsUtil.pass(returnText + " retrieved from " + element);
-			//ExtentReportsUtil.logger.log(LogStatus.PASS, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
+			ExtentReportsUtil.logger.log(LogStatus.PASS, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
 		}else {
 			ExtentReportsUtil.pass("Text was not retrieved from " + element);
 			SetupEnv.fail = 1;
-			//ExtentReportsUtil.logger.log(LogStatus.FAIL, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+			ExtentReportsUtil.logger.log(LogStatus.FAIL, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 		return returnText;
 	}

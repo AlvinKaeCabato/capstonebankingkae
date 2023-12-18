@@ -1,0 +1,14 @@
+pagesPack\ViewTransactionPage.class
+pagesPack\SplashPage.class
+casesPack\MainRunClass.class
+pagesPack\AddTransactionPage.class
+pagesPack\ViewAccountPage.class
+pagesPack\CreateAccountPage.class
+utilsPack\ExtentReportsUtil.class
+pageMethodsPack\baa01.class
+callPack\BaseMethods.class
+testPack\FullRun.class
+callPack\SetupEnv.class
+pagesPack\LoginPage.class
+pagesPack\UserPage.class
+utilsPack\Logger.class
