@@ -326,4 +326,28 @@ public class BaseMethods {
 		}
 		return returnText;
 	}
+	/*
+	public void verifyAccNumCount(String element) {
+		WebElement elm = driver.findElement(AppiumBy.id(element));
+		if(elm.getText().length() == 6) {
+			ExtentReportsUtil.pass(element + "count is exactly 6");
+			ExtentReportsUtil.logger.log(LogStatus.PASS, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
+		}else {
+			ExtentReportsUtil.pass(element + "count is not 6");
+			SetupEnv.fail = 1;
+			ExtentReportsUtil.logger.log(LogStatus.FAIL, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+		}
+	}
+	public void verifyAccPinCount(String element) {
+		WebElement elm = driver.findElement(AppiumBy.id(element));
+		if(elm.getText().length() == 4) {
+			ExtentReportsUtil.pass(element + "count is exactly 4");
+			ExtentReportsUtil.logger.log(LogStatus.PASS, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
+		}else {
+			ExtentReportsUtil.pass(element + "count is not 4");
+			SetupEnv.fail = 1;
+			ExtentReportsUtil.logger.log(LogStatus.FAIL, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+		}
+	}
+	*/
 }

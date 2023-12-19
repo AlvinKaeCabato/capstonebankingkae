@@ -28,6 +28,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.ITestResult;
 import io.appium.java_client.android.AndroidDriver;
@@ -48,8 +49,9 @@ public class SetupEnv {
     protected FileInputStream configFis;
     protected FileInputStream configFisVer;
     public File outputCsv;
-    private final String CONFIG_FILE_PATH="//src//main//resources//inputFail1.xlsx";
+    private final String CONFIG_FILE_PATH="//src//main//resources//inputFail2.xlsx";
     private final String VERIFY_FILE_PATH="//src//main//resources//VerifyPass.xlsx";
+    private final String PROJ_CONFIG_FILE_PATH="//src//main//resources//capstone.properties";
     private final String LOG_OUTPUT_FILE="\\Reports\\ExtRepLog_" + java.time.LocalDate.now()+".html";
     private final String FINAL_LOG_FILE = LOG_OUTPUT_FILE;
     private final String CSV_LOG_OUTPUT_FILE="\\logs\\Log_" + java.time.LocalDate.now();
@@ -59,10 +61,13 @@ public class SetupEnv {
     protected File file = new File("");
     protected File fileVer = new File("");
     protected File logfile = new File("");
+    protected File rootConfig = new File("");
     public List<String[]> dataLines = new ArrayList<>();
     public static XSSFWorkbook workbook,workbookVer;
     public static XSSFSheet sheet,sheetVer;
     public static XSSFRow row,rowVer;
+    public static Properties configProj = new Properties();
+    
     
     public static int fail;
     
@@ -71,13 +76,18 @@ public class SetupEnv {
 		ExtentReportsUtil.startExtentReport(FINAL_LOG_FILE);
 	}  
     
+    @BeforeMethod
+    public void resetFlag() {
+    	fail = 0;
+    }
     @BeforeClass(alwaysRun=true)
-    public void setUp() throws Exception {
-    	fail = 0;    	
-    	//input files
+    public void setUpWorkfiles() throws Exception{
+     	//input files
     	configFis = new FileInputStream(file.getAbsoluteFile()
     			+ CONFIG_FILE_PATH);
     	outputCsv = new File(logfile.getAbsoluteFile()+ CSV_FINAL_LOG_FILE);
+    	configProj.load(new FileInputStream(rootConfig.getAbsoluteFile()
+    			+ PROJ_CONFIG_FILE_PATH));
     	
     	//Workbook for input items
     	try {
@@ -85,7 +95,7 @@ public class SetupEnv {
         			+ CONFIG_FILE_PATH);
         workbook = new XSSFWorkbook(configFis);
         sheet = workbook.getSheet("in");
-        System.out.println("Opening workbook");
+        System.out.println("Opening input items workbook");
     	}catch(FileNotFoundException e) {
     		e.printStackTrace();
     	}catch (IOException e) {
@@ -116,7 +126,7 @@ public class SetupEnv {
         			+ VERIFY_FILE_PATH);
         workbookVer = new XSSFWorkbook(configFisVer);
         sheetVer = workbookVer.getSheet("in");
-        System.out.println("Opening workbook");
+        System.out.println("Opening verification items workbook");
     	}catch(FileNotFoundException e) {
     		e.printStackTrace();
     	}catch (IOException e) {
@@ -140,23 +150,24 @@ public class SetupEnv {
             configVer.setProperty(c,d);
         }
         
+    }
+    
+    @BeforeClass(alwaysRun=true)
+    public void setUp() throws Exception {
+    	fail = 0;    	
+   
         //Setup driver
         MutableCapabilities capabilities = new UiAutomator2Options();
-		capabilities.setCapability("Project", "API demo App automation");
+		capabilities.setCapability("Project", configProj.getProperty("project"));
 		capabilities.setCapability("build", buildName);
-		capabilities.setCapability("name", "Capstone Test");
-        capabilities.setCapability("app", "bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c");
+		capabilities.setCapability("name", configProj.getProperty("name"));
+        capabilities.setCapability("app", configProj.getProperty("app"));
         driver = new AndroidDriver(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"),capabilities);
         
     }
     
     @AfterClass(alwaysRun=true)
     public void tearDown() throws Exception {
-        try (PrintWriter pw = new PrintWriter(outputCsv)) {
-            dataLines.stream()
-              .map(this::convertToCSV)
-              .forEach(pw::println);
-        }
         driver.quit();
     }
     
@@ -206,7 +217,12 @@ public class SetupEnv {
     }
     
     @AfterSuite
-	public void endTest() {
+	public void endTest() throws Exception {
+        try (PrintWriter pw = new PrintWriter(outputCsv)) {
+            dataLines.stream()
+              .map(this::convertToCSV)
+              .forEach(pw::println);
+        }
 		ExtentReportsUtil.flushExtentReport();
 		ExtentReportsUtil.closeExtentReport();
 		Logger.log("End Report");
