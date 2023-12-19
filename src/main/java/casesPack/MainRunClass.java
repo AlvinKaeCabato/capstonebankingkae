@@ -85,7 +85,7 @@ public class MainRunClass extends SetupEnv{
 		bm.verifyDataIsSame(ViewAccountPage.pinNumView, configVer.getProperty("user1pin"));
 		Float f = Float.parseFloat(bm.getTextFromElement(ViewAccountPage.currBalView));
 		Float g = Float.parseFloat(configVer.getProperty("user1currbal"));
-		bm.verifyDataIsSame(f, g);
+		bm.verifyDataIsSameFloat(f, g);
 		if(fail==0) {
 			BAA01_Ver = "Passed";
 		}else {
@@ -162,8 +162,8 @@ public class MainRunClass extends SetupEnv{
 
 		String BAA02_Ver = "";
 
-		bm.verifyDataIsSame(desc, configProp.getProperty("user1trandesc"));
-		bm.verifyDataIsSame(amt, configProp.getProperty("user1trancamt"));
+		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user1trandesc"));
+		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user1trancamt"));
 		if(fail==0) {
 			BAA02_Ver = "Passed";
 		}else {
@@ -256,8 +256,8 @@ public class MainRunClass extends SetupEnv{
 		amt = x[1];
 		
 		String BAA03_Ver = "";
-		bm.verifyDataIsSame(desc, configProp.getProperty("user2trandesc"));
-		bm.verifyDataIsSame(amt, configProp.getProperty("user2trancamt"));
+		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user2trandesc"));
+		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user2trancamt"));
 		
 		//logging
 		dataLines.add(new String[] {

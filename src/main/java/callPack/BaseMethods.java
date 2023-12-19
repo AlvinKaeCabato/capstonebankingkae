@@ -60,53 +60,57 @@ public class BaseMethods {
 		}
 		return screenshotLoc;
 	}
-	public void clickElement(String[] element) {
-		String locatorBy = element[0];
+	public void clickElement(String element) {
+		//String locatorBy = element[0];
 		boolean clicked = false;
+		/*
 		if (locatorBy == "accessibilityId") {
-			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element));
 			
 			try {
 				elm.click();
 				clicked = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+				elm = driver.findElement(AppiumBy.accessibilityId(element));
 				elm.click();
 				clicked = true;
 			}
 		}
 		else if (locatorBy == "id") {
-			WebElement elm = driver.findElement(AppiumBy.id(element[1]));
+		*/
+			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
 				elm.click();
 				clicked = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.id(element[1]));
+				elm = driver.findElement(AppiumBy.id(element));
 				elm.click();
 				clicked = true;
-			}	
+			}
+			/*
 		}
 		else if (locatorBy == "xpath") {
-			WebElement elm = driver.findElement(AppiumBy.xpath(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.xpath(element));
 			try {
 				elm.click();
 				clicked = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.xpath(element[1]));
+				elm = driver.findElement(AppiumBy.xpath(element));
 				elm.click();
 				clicked = true;
 			}	
 		}
+		*/
 		
 		if (clicked == true) {
-			System.out.println(element[1] + " was Clicked");
-			ExtentReportsUtil.pass(element[1] + " was Clicked");
+			System.out.println(element + " was Clicked");
+			ExtentReportsUtil.pass(element + " was Clicked");
 			ExtentReportsUtil.logger.log(LogStatus.PASS, 
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
 		}
 		else {
-			System.out.println(element[1] + " was NOT Clicked");
-			ExtentReportsUtil.fail(element[1] + " was NOT Clicked");
+			System.out.println(element + " was NOT Clicked");
+			ExtentReportsUtil.fail(element + " was NOT Clicked");
 			SetupEnv.fail = 1;
 			ExtentReportsUtil.logger.log(LogStatus.FAIL, 
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
@@ -114,30 +118,31 @@ public class BaseMethods {
 		
 	}
 	
-	public void sendTextToElement(String[] element, String value) {
-		String locatorBy = element[0];
+	public void sendTextToElement(String element, String value) {
+		//String locatorBy = element[0];
 		boolean enteredText = false;
+		/*
 		if (locatorBy == "accessibilityId") {
-			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element));
 			try {
 				elm.clear();
 				elm.sendKeys(value);
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+				elm = driver.findElement(AppiumBy.accessibilityId(element));
 				elm.clear();
 				elm.sendKeys(value);			
 				enteredText = true;
 			}
 		}
 		else if (locatorBy == "xpath") {
-			WebElement elm = driver.findElement(AppiumBy.xpath(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.xpath(element));
 			try {
 				elm.clear();
 				elm.sendKeys(value);			
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.xpath(element[1]));
+				elm = driver.findElement(AppiumBy.xpath(element));
 				elm.clear();
 				elm.sendKeys(value);			
 				enteredText = true;
@@ -145,79 +150,83 @@ public class BaseMethods {
 			
 		}
 		else if (locatorBy == "id") {
-			WebElement elm = driver.findElement(AppiumBy.id(element[1]));
+		*/
+			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
 				elm.clear();
 				elm.sendKeys(value);			
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.id(element[1]));
+				elm = driver.findElement(AppiumBy.id(element));
 				elm.clear();
 				elm.sendKeys(value);			
 				enteredText = true;
 			}
-		}
+		//}
 		
 		if (enteredText == true) {
-			System.out.println(" Send text value to element: " + element[1]);	
-			ExtentReportsUtil.pass(" Send text value to element: " + element[1]);
+			System.out.println(" Send text value to element: " + element);	
+			ExtentReportsUtil.pass(" Send text value to element: " + element);
 			ExtentReportsUtil.logger.log(LogStatus.PASS, ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
 		}
 		else {
-			System.out.println(" Unable to send text value to element: " + element[1]);	
-			ExtentReportsUtil.fail(" Unable to send text value to element: " + element[1]);
+			System.out.println(" Unable to send text value to element: " + element);	
+			ExtentReportsUtil.fail(" Unable to send text value to element: " + element);
 			SetupEnv.fail = 1;
 			ExtentReportsUtil.logger.log(LogStatus.FAIL, ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 	}
 	
-	public void verifyDataIsSame(String[] element, String value) {
-		String locatorBy = element[0];
+	public void verifyDataIsSame(String element, String value) {
+		//String locatorBy = element[0];
 		boolean enteredText = false;
 		String inputText = "";
+		/*
 		if (locatorBy == "accessibilityId") {
-			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element));
 			try {
 				inputText = elm.getText();
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+				elm = driver.findElement(AppiumBy.accessibilityId(element));
 				inputText = elm.getText();			
 				enteredText = true;
 			}
 		}
 		else if (locatorBy == "xpath") {
-			WebElement elm = driver.findElement(AppiumBy.xpath(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.xpath(element));
 			try {
 				inputText = elm.getText();		
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.xpath(element[1]));
+				elm = driver.findElement(AppiumBy.xpath(element));
 				inputText = elm.getText();			
 				enteredText = true;
 			}
 
 		}
 		else if (locatorBy == "id") {
-			WebElement elm = driver.findElement(AppiumBy.id(element[1]));
+		*/
+			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
 				inputText = elm.getText();		
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.id(element[1]));
+				elm = driver.findElement(AppiumBy.id(element));
 				inputText = elm.getText();		
 				enteredText = true;
 			}
-		}
+			
+		//}
 		
 		if (inputText.trim().equals(value.trim())) {
-			System.out.println(inputText + " from" + element[1] + " is the same as expected value: " + value);	
-			ExtentReportsUtil.pass(inputText + " from" + element[1] + " is the same as expected value: " + value);
+			System.out.println(inputText + " from" + element + " is the same as expected value: " + value);	
+			ExtentReportsUtil.pass(inputText + " from" + element + " is the same as expected value: " + value);
 			ExtentReportsUtil.logger.log(LogStatus.PASS, ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
 		}
 		else {
-			System.out.println(inputText + " from " + element[1] + " is not the same as expected value: " + value);	
-			ExtentReportsUtil.fail(inputText + " from " + element[1] + " is not the same as expected value: " + value);
+			System.out.println(inputText + " from " + element + " is not the same as expected value: " + value);	
+			ExtentReportsUtil.fail(inputText + " from " + element + " is not the same as expected value: " + value);
 			SetupEnv.fail = 1;
 			ExtentReportsUtil.logger.log(LogStatus.FAIL, ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
@@ -236,8 +245,7 @@ public class BaseMethods {
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 	}
-	
-	public void verifyDataIsSame(String act, String exp) {
+	public void verifyDataIsSameFloat(Float act, Float exp) {
 		if (act.equals(exp)) {
 			System.out.println(act + " is the same as expected value: " + exp);	
 			ExtentReportsUtil.pass(act + " is the same as expected value: " + exp);
@@ -252,43 +260,62 @@ public class BaseMethods {
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 	}
-	public String getTextFromElement(String[] element) {
-		String locatorBy = element[0];
+	public void verifyDataIsSameDirComp(String act, String exp) {
+		if (act.equals(exp)) {
+			System.out.println(act + " is the same as expected value: " + exp);	
+			ExtentReportsUtil.pass(act + " is the same as expected value: " + exp);
+			ExtentReportsUtil.logger.log(LogStatus.PASS, 
+					ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
+		}
+		else {
+			System.out.println(act + " is not the same as input value: " + exp);	
+			ExtentReportsUtil.fail(act + " is not the same as input value: " + exp);
+			SetupEnv.fail = 1;
+			ExtentReportsUtil.logger.log(LogStatus.FAIL, 
+					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+		}
+	}
+	public String getTextFromElement(String element) {
+		//String locatorBy = element[0];
 		boolean retrieved = false;
 		String returnText = "";
+		/*
 		if (locatorBy == "accessibilityId") {
-			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.accessibilityId(element));
 			try {
 				returnText = elm.getText();
 				retrieved = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.accessibilityId(element[1]));
+				elm = driver.findElement(AppiumBy.accessibilityId(element));
 				returnText = elm.getText();
 				retrieved= true;
 			}	
 		}
 		else if (locatorBy == "id") {
-			WebElement elm = driver.findElement(AppiumBy.id(element[1]));
+		*/
+			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
 				returnText = elm.getText();
 				retrieved = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.id(element[1]));
+				elm = driver.findElement(AppiumBy.id(element));
 				returnText = elm.getText();
 				retrieved = true;
 			}	
+			/*
 		}
 		else if (locatorBy == "xpath") {
-			WebElement elm = driver.findElement(AppiumBy.xpath(element[1]));
+			WebElement elm = driver.findElement(AppiumBy.xpath(element));
 			try {
 				returnText = elm.getText();
 				retrieved = true;
 			} catch (StaleElementReferenceException e) {
-				elm = driver.findElement(AppiumBy.xpath(element[1]));
+				elm = driver.findElement(AppiumBy.xpath(element));
 				returnText = elm.getText();
 				retrieved = true;
 			}	
 		}
+		*/
 		if(retrieved == true) {
 			ExtentReportsUtil.pass(returnText + " retrieved from " + element);
 			ExtentReportsUtil.logger.log(LogStatus.PASS, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
