@@ -13,8 +13,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <surefire.version>2.19.1</surefire.version>
-        <surefire.plugin.version>3.0.0-M5</surefire.plugin.version>
+        <surefire.version>3.2.3</surefire.version>
+        <surefire.plugin.version>3.2.3</surefire.plugin.version>
         <config.file>default</config.file>
     </properties>
 
@@ -53,6 +53,19 @@
             <groupId>com.browserstack</groupId>
             <artifactId>browserstack-java-sdk</artifactId>
             <version>LATEST</version>
+               <exclusions>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+					
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-simple</artifactId>
+					<groupId>org.slf4j</groupId>
+					
+				</exclusion>
+			</exclusions>
+			
             <scope>compile</scope>
         </dependency>
 
@@ -77,11 +90,18 @@
    		  <groupId>com.guicedee.services</groupId>
   		  <artifactId>sl4j</artifactId>
   		  <version>1.0.13.5</version>
-		</dependency>
-		<dependency>
-  		  <groupId>org.apache.logging.log4j</groupId>
-  		  <artifactId>log4j-api</artifactId>
-   		  <version>2.22.0</version>
+               <exclusions>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+					
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-simple</artifactId>
+					<groupId>org.slf4j</groupId>
+					
+				</exclusion>
+			</exclusions>
 		</dependency>
    	 </dependencies>
    	 
@@ -103,8 +123,9 @@
               <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                 <version>2.22.2</version>
+                 <version>3.2.3</version>
                  <configuration>
+					
                     <suiteXmlFiles>
                         <suiteXmlFile>banking.xml</suiteXmlFile>
                     </suiteXmlFiles>

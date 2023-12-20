@@ -31,6 +31,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.ITestResult;
+
+import io.appium.java_client.Setting;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -49,7 +51,7 @@ public class SetupEnv {
     protected FileInputStream configFis;
     protected FileInputStream configFisVer;
     public File outputCsv;
-    private final String CONFIG_FILE_PATH="//src//main//resources//inputFail2.xlsx";
+    private final String CONFIG_FILE_PATH="//src//main//resources//inputAllCorrect.xlsx";
     private final String VERIFY_FILE_PATH="//src//main//resources//VerifyPass.xlsx";
     private final String PROJ_CONFIG_FILE_PATH="//src//main//resources//capstone.properties";
     private final String LOG_OUTPUT_FILE="\\Reports\\ExtRepLog_" + java.time.LocalDate.now()+".html";
@@ -158,11 +160,22 @@ public class SetupEnv {
    
         //Setup driver
         MutableCapabilities capabilities = new UiAutomator2Options();
+        
 		capabilities.setCapability("Project", configProj.getProperty("project"));
 		capabilities.setCapability("build", buildName);
 		capabilities.setCapability("name", configProj.getProperty("name"));
         capabilities.setCapability("app", configProj.getProperty("app"));
+        capabilities.setCapability("browserstack.networklogs", "true");
         driver = new AndroidDriver(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"),capabilities);
+        /*
+        capabilities.setCapability("deviceName", "Pixel4KaeTest");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("platformVersion",13.0);
+        driver = new AndroidDriver(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"),capabilities);
+        */
+        driver.setSetting(Setting.WAIT_FOR_IDLE_TIMEOUT, 10);
+        driver.setSetting(Setting.WAIT_FOR_SELECTOR_TIMEOUT, 10);
         
     }
     
