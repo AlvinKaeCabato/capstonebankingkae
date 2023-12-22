@@ -111,8 +111,8 @@ public class MainRunClass extends SetupEnv{
 
 		
 		//Clean up Step - Logout and tear down
-		navigateBack();
-		bm.clickElement(UserPage.logout);
+		//navigateBack();
+		//bm.clickElement(UserPage.logout);
 		tearDown();
 	}
 	
