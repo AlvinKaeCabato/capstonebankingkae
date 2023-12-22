@@ -96,16 +96,16 @@ public class BaseMethods {
 
 			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
-				
+				elm.clear();
 				elm.sendKeys(value);			
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
 				elm = driver.findElement(AppiumBy.id(element));
-				
+				elm.clear();
 				elm.sendKeys(value);			
 				enteredText = true;
 			}
-		
+		/*
 		if (enteredText == true) {
 			System.out.println("Send text value to element: " + element);	
 			ExtentReportsUtil.pass("Send text value to element: " + element);
@@ -117,6 +117,7 @@ public class BaseMethods {
 			SetupEnv.fail = 1;
 			ExtentReportsUtil.logger.log(LogStatus.FAIL, ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
+		*/
 	}
 	
 	public void verifyDataIsSame(String element, String value) {
