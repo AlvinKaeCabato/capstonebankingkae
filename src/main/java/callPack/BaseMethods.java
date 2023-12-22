@@ -26,7 +26,7 @@ public class BaseMethods {
 	
 	public BaseMethods(AndroidDriver driver) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		
 	}
 	public String getScreenshot() {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -96,12 +96,12 @@ public class BaseMethods {
 
 			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
-				elm.clear();
+				
 				elm.sendKeys(value);			
 				enteredText = true;
 			} catch (StaleElementReferenceException e) {
 				elm = driver.findElement(AppiumBy.id(element));
-				elm.clear();
+				
 				elm.sendKeys(value);			
 				enteredText = true;
 			}
