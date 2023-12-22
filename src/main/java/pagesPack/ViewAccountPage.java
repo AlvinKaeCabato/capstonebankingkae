@@ -1,6 +1,7 @@
 package pagesPack;
 
 public class ViewAccountPage {
+	//plan to have another array element for text box limitations
 	/*
     public static final String[] nameView = {"id", "textViewName"};
     public static final String[] add1View = {"id", "textViewAddress1"};

@@ -51,7 +51,7 @@ public class SetupEnv {
     protected FileInputStream configFis;
     protected FileInputStream configFisVer;
     public File outputCsv;
-    private final String CONFIG_FILE_PATH="//src//main//resources//inputAllCorrect.xlsx";
+    private final String CONFIG_FILE_PATH="//src//main//resources//inputComp.xlsx";
     private final String VERIFY_FILE_PATH="//src//main//resources//VerifyPass.xlsx";
     private final String PROJ_CONFIG_FILE_PATH="//src//main//resources//capstone.properties";
     private final String LOG_OUTPUT_FILE="\\Reports\\ExtRepLog_" + java.time.LocalDate.now()+".html";
@@ -97,6 +97,7 @@ public class SetupEnv {
         			+ CONFIG_FILE_PATH);
         workbook = new XSSFWorkbook(configFis);
         sheet = workbook.getSheet("in");
+        sheetVer = workbook.getSheet("ver");
         System.out.println("Opening input items workbook");
     	}catch(FileNotFoundException e) {
     		e.printStackTrace();
@@ -123,6 +124,7 @@ public class SetupEnv {
         
         
       //Workbook for verification items
+        /*
     	try {
     	configFisVer = new FileInputStream(fileVer.getAbsoluteFile()
         			+ VERIFY_FILE_PATH);
@@ -140,7 +142,7 @@ public class SetupEnv {
         } catch (IOException e) {
             e.printStackTrace();
         }  
-        
+        */
         Iterator<Row> rowIteratorVer = sheetVer.iterator();
         DataFormatter formatterVer = new DataFormatter();
         String c,d;

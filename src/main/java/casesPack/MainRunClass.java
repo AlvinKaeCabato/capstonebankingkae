@@ -1,18 +1,7 @@
 package casesPack;
 
-import org.testng.Assert;
+
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentReporter;
-import com.relevantcodes.extentreports.LogStatus;
-import org.testng.ITestResult;
-
-import com.relevantcodes.extentreports.ExtentReports;
-
-
 import callPack.SetupEnv;
 import utilsPack.ExtentReportsUtil;
 import callPack.BaseMethods;
@@ -29,8 +18,7 @@ public class MainRunClass extends SetupEnv{
 	
 	/*
 	 * BAA_01
-	 * ​Step 1: Launch BankingApp  using .apk file. 
-	 * Step 2: Create an account  
+	 * ​Step 1: Launch BankingApp  using .apk file. 	 * Step 2: Create an account  
 	 * Step 3: Login into account using valid mpin 
 	 * Step 4: Click on Details  
 	 * Step 5: Validated all the details are same as entered. 
