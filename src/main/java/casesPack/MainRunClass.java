@@ -26,7 +26,6 @@ public class MainRunClass extends SetupEnv{
 	 */
 	@Test
 	public void BAA_01() throws Exception{
-		String BAA01_Ver = "";
 		ExtentReportsUtil.logstep("BAA_01 - Create Account - " + driver.getCapabilities().getCapability("deviceModel"));
 		BaseMethods bm = new BaseMethods(driver);
 		//Step 1 - Setup run to launch app before class is started
@@ -59,22 +58,7 @@ public class MainRunClass extends SetupEnv{
 		Float f = Float.parseFloat(bm.getTextFromElement(ViewAccountPage.currBalView));
 		Float g = Float.parseFloat(configVer.getProperty("user1currbal"));
 		bm.verifyDataIsSameFloat(f, g);
-		if(fail==0) {
-			BAA01_Ver = "Passed";
-		}else {
-			BAA01_Ver = "Failed";
-		}
-		
-		//logging
-		dataLines.add(new String[] {
-				"Timestop start",
-				java.time.LocalDateTime.now().toString()
-		});
-		dataLines.add(new String[] {
-				"BAA_01",
-				BAA01_Ver
-		});
-		
+
 		//Clean up step - Logging out
 		navigateBack();
 		bm.clickElement(UserPage.logout);
@@ -121,21 +105,10 @@ public class MainRunClass extends SetupEnv{
 		desc = x[0];
 		amt = x[1];
 
-		String BAA02_Ver = "";
 
 		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user1trandesc"));
 		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user1trancamt"));
-		if(fail==0) {
-			BAA02_Ver = "Passed";
-		}else {
-			BAA02_Ver = "Failed";
-		}
-		
-		//logging
-		dataLines.add(new String[] {
-				"BAA_02",
-				BAA02_Ver
-		});
+
 		
 		//Clean up Step - Logout and tear down
 		navigateBack();
@@ -197,24 +170,9 @@ public class MainRunClass extends SetupEnv{
 		desc = x[0];
 		amt = x[1];
 		
-		String BAA03_Ver = "";
 		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user2trandesc"));
 		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user2trancamt"));
 		
-		//logging
-		if(fail==0) {
-			BAA03_Ver = "Passed";
-		}else {
-			BAA03_Ver = "Failed";
-		}
-		dataLines.add(new String[] {
-				"BAA_03",
-				BAA03_Ver
-		});
-		dataLines.add(new String[] {
-				"Timestop end",
-				java.time.LocalDateTime.now().toString()
-		});
 		
 	}
 	

@@ -50,21 +50,17 @@ public class SetupEnv {
     //For Input/OutputFiles
     protected FileInputStream configFis;
     protected FileInputStream configFisVer;
-    public File outputCsv;
     private final String CONFIG_FILE_PATH="//src//main//resources//inputComp.xlsx";
     private final String VERIFY_FILE_PATH="//src//main//resources//VerifyPass.xlsx";
     private final String PROJ_CONFIG_FILE_PATH="//src//main//resources//capstone.properties";
     private final String LOG_OUTPUT_FILE="\\Reports\\ExtRepLog_" + java.time.LocalDate.now()+".html";
     private final String FINAL_LOG_FILE = LOG_OUTPUT_FILE;
-    private final String CSV_LOG_OUTPUT_FILE="\\logs\\Log_" + java.time.LocalDate.now();
-    private final String CSV_FINAL_LOG_FILE = CSV_LOG_OUTPUT_FILE;
     public static Properties configProp = new Properties();
     public static Properties configVer = new Properties();
     protected File file = new File("");
     protected File fileVer = new File("");
     protected File logfile = new File("");
     protected File rootConfig = new File("");
-    public List<String[]> dataLines = new ArrayList<>();
     public static XSSFWorkbook workbook,workbookVer;
     public static XSSFSheet sheet,sheetVer;
     public static XSSFRow row,rowVer;
@@ -87,7 +83,6 @@ public class SetupEnv {
      	//input files
     	configFis = new FileInputStream(file.getAbsoluteFile()
     			+ CONFIG_FILE_PATH);
-    	outputCsv = new File(logfile.getAbsoluteFile()+ CSV_FINAL_LOG_FILE);
     	configProj.load(new FileInputStream(rootConfig.getAbsoluteFile()
     			+ PROJ_CONFIG_FILE_PATH));
     	
@@ -212,11 +207,7 @@ public class SetupEnv {
 	public void navigateBack() {
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 	}
-	public String convertToCSV(String[] data) {
-	    return Stream.of(data)
-	      .map(this::escapeSpecialCharacters)
-	      .collect(Collectors.joining(","));
-	}
+
 	public String escapeSpecialCharacters(String data) {
 	    String escapedData = data.replaceAll("\\R", " ");
 	    if (data.contains(",") || data.contains("\"") || data.contains("'")) {
@@ -233,11 +224,7 @@ public class SetupEnv {
     
     @AfterSuite
 	public void endTest() throws Exception {
-        try (PrintWriter pw = new PrintWriter(outputCsv)) {
-            dataLines.stream()
-              .map(this::convertToCSV)
-              .forEach(pw::println);
-        }
+
 		ExtentReportsUtil.flushExtentReport();
 		ExtentReportsUtil.closeExtentReport();
 		Logger.log("End Report");
