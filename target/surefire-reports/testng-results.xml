@@ -2,28 +2,28 @@
 <testng-results ignored="6" total="10" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-27T09:17:38 CST" name="CapstoneSuite" finished-at="2023-12-27T09:20:15 CST" duration-ms="156490">
+  <suite started-at="2023-12-27T09:22:15 CST" name="CapstoneSuite" finished-at="2023-12-27T09:24:53 CST" duration-ms="158332">
     <groups>
     </groups>
-    <test started-at="2023-12-27T09:17:38 CST" name="Capstone_Test-0" finished-at="2023-12-27T09:20:15 CST" duration-ms="156490">
+    <test started-at="2023-12-27T09:22:15 CST" name="Capstone_Test-0" finished-at="2023-12-27T09:24:53 CST" duration-ms="158332">
       <class name="casesPack.BAA_03">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:17:38 CST" name="setUp" finished-at="2023-12-27T09:18:03 CST" duration-ms="24345" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:22:15 CST" name="setUp" finished-at="2023-12-27T09:22:40 CST" duration-ms="24749" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:18:03 CST" name="setUpWorkfiles" finished-at="2023-12-27T09:18:04 CST" duration-ms="1570" status="PASS">
+        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:22:40 CST" name="setUpWorkfiles" finished-at="2023-12-27T09:22:41 CST" duration-ms="1139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpWorkfiles -->
-        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:18:04 CST" name="resetFlag" finished-at="2023-12-27T09:18:05 CST" duration-ms="906" status="PASS">
+        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:22:41 CST" name="resetFlag" finished-at="2023-12-27T09:22:42 CST" duration-ms="950" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetFlag -->
-        <test-method signature="BAA03()[pri:3, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:18:05 CST" name="BAA03" finished-at="2023-12-27T09:19:06 CST" duration-ms="60878" status="PASS">
+        <test-method signature="BAA03()[pri:3, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:22:42 CST" name="BAA03" finished-at="2023-12-27T09:23:45 CST" duration-ms="62963" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BAA03 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:19:10 CST" name="afterMethod" finished-at="2023-12-27T09:19:11 CST" duration-ms="781" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_03@12968227]" started-at="2023-12-27T09:23:49 CST" name="afterMethod" finished-at="2023-12-27T09:23:49 CST" duration-ms="789" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -36,27 +36,27 @@
         </test-method> <!-- afterMethod -->
       </class> <!-- casesPack.BAA_03 -->
       <class name="casesPack.BAA_01">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:17:37 CST" name="setupReport" finished-at="2023-12-27T09:17:38 CST" duration-ms="1406" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:22:14 CST" name="setupReport" finished-at="2023-12-27T09:22:15 CST" duration-ms="1170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:17:38 CST" name="setUp" finished-at="2023-12-27T09:18:02 CST" duration-ms="24039" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:22:15 CST" name="setUp" finished-at="2023-12-27T09:22:39 CST" duration-ms="23984" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:18:02 CST" name="setUpWorkfiles" finished-at="2023-12-27T09:18:04 CST" duration-ms="1873" status="PASS">
+        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:22:39 CST" name="setUpWorkfiles" finished-at="2023-12-27T09:22:41 CST" duration-ms="1905" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpWorkfiles -->
-        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:18:04 CST" name="resetFlag" finished-at="2023-12-27T09:18:05 CST" duration-ms="913" status="PASS">
+        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:22:41 CST" name="resetFlag" finished-at="2023-12-27T09:22:42 CST" duration-ms="970" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetFlag -->
-        <test-method signature="BAA01()[pri:1, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:18:05 CST" name="BAA01" finished-at="2023-12-27T09:19:25 CST" duration-ms="79805" status="PASS">
+        <test-method signature="BAA01()[pri:1, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:22:42 CST" name="BAA01" finished-at="2023-12-27T09:24:04 CST" duration-ms="82354" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BAA01 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:19:29 CST" name="afterMethod" finished-at="2023-12-27T09:19:30 CST" duration-ms="719" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:24:08 CST" name="afterMethod" finished-at="2023-12-27T09:24:09 CST" duration-ms="755" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -67,15 +67,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:19:31 CST" name="resetFlag" finished-at="2023-12-27T09:19:32 CST" duration-ms="754" status="PASS">
+        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:24:10 CST" name="resetFlag" finished-at="2023-12-27T09:24:10 CST" duration-ms="754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetFlag -->
-        <test-method signature="BAA02()[pri:2, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:19:32 CST" name="BAA02" finished-at="2023-12-27T09:20:08 CST" duration-ms="36656" status="PASS">
+        <test-method signature="BAA02()[pri:2, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:24:10 CST" name="BAA02" finished-at="2023-12-27T09:24:45 CST" duration-ms="34751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BAA02 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:20:14 CST" name="afterMethod" finished-at="2023-12-27T09:20:14 CST" duration-ms="621" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:24:51 CST" name="afterMethod" finished-at="2023-12-27T09:24:52 CST" duration-ms="970" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -86,29 +86,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:20:15 CST" name="endTest" finished-at="2023-12-27T09:20:16 CST" duration-ms="1145" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:24:53 CST" name="endTest" finished-at="2023-12-27T09:24:54 CST" duration-ms="1166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:20:17 CST" name="tearDown" finished-at="2023-12-27T09:20:17 CST" duration-ms="694" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.BAA_01@4422dd48]" started-at="2023-12-27T09:24:55 CST" name="tearDown" finished-at="2023-12-27T09:24:56 CST" duration-ms="734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- casesPack.BAA_01 -->
       <class name="casesPack.BAA_02">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:17:38 CST" name="setUp" finished-at="2023-12-27T09:18:03 CST" duration-ms="24676" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:22:15 CST" name="setUp" finished-at="2023-12-27T09:22:39 CST" duration-ms="23927" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:18:03 CST" name="setUpWorkfiles" finished-at="2023-12-27T09:18:04 CST" duration-ms="1238" status="PASS">
+        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:22:39 CST" name="setUpWorkfiles" finished-at="2023-12-27T09:22:41 CST" duration-ms="1961" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpWorkfiles -->
-        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:18:04 CST" name="resetFlag" finished-at="2023-12-27T09:18:05 CST" duration-ms="919" status="PASS">
+        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:22:41 CST" name="resetFlag" finished-at="2023-12-27T09:22:42 CST" duration-ms="969" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetFlag -->
-        <test-method signature="main()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:18:05 CST" name="main" finished-at="2023-12-27T09:18:19 CST" duration-ms="13549" status="FAIL">
+        <test-method signature="main()[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:22:42 CST" name="main" finished-at="2023-12-27T09:22:56 CST" duration-ms="14253" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[An element could not be located on the page using the given search parameters.
@@ -116,9 +116,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [63525924534d1692ba0d4d3c4b61890af3a09e3e, findElement {using=id, value=buttonAddTrans}]
-Capabilities {appium:appActivity: marcusobyrne.bankingapp.Mai..., appium:appPackage: marcusobyrne.bankingapp, appium:automationName: uiautomator2, appium:browserstack.networklogs: true, appium:build: jenkins-capstoneprojectkae-946, appium:chromedriverPort: 18081, appium:chromedriverPorts: [[18111, 18121]], appium:databaseEnabled: false, appium:desired: {appActivity: marcusobyrne.bankingapp.Mai..., appPackage: marcusobyrne.bankingapp, automationName: uiautomator2, browserstack.networklogs: true, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_917_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, build: jenkins-capstoneprojectkae-946, chromedriverPort: 18081, chromedriverPorts: [[18111, 18121]], deviceName: Android, disableSuppressAccessibilityService: true, goog:chromeOptions: {}, nativeWebScreenshot: true, newCommandTimeout: 0, platformName: Android, skipServerInstallation: true, systemPort: 8201, udid: R5CRC0W8A9X}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-G991B, appium:deviceName: R5CRC0W8A9X, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: R5CRC0W8A9X, appium:disableSuppressAccessibilityService: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:optimalHubUrl: hub-aps.browserstack.com, appium:pixelRatio: 3, appium:platformVersion: 12, appium:skipServerInstallation: true, appium:statBarHeight: 79, appium:systemPort: 8201, appium:takesScreenshot: true, appium:udid: R5CRC0W8A9X, appium:viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_917_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, goog:chromeOptions: {}, platformName: ANDROID}
-Session ID: 63525924534d1692ba0d4d3c4b61890af3a09e3e]]>
+Command: [2a9def3ee892cd40d46846f1cf91eca02496c529, findElement {using=id, value=buttonAddTrans}]
+Capabilities {appium:appActivity: marcusobyrne.bankingapp.Mai..., appium:appPackage: marcusobyrne.bankingapp, appium:automationName: uiautomator2, appium:browserstack.networklogs: true, appium:build: jenkins-capstoneprojectkae-947, appium:chromedriverPort: 18083, appium:chromedriverPorts: [[18133, 18143]], appium:databaseEnabled: false, appium:desired: {appActivity: marcusobyrne.bankingapp.Mai..., appPackage: marcusobyrne.bankingapp, automationName: uiautomator2, browserstack.networklogs: true, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_921_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, build: jenkins-capstoneprojectkae-947, chromedriverPort: 18083, chromedriverPorts: [[18133, 18143]], deviceName: Android, disableSuppressAccessibilityService: true, goog:chromeOptions: {}, nativeWebScreenshot: true, newCommandTimeout: 0, platformName: Android, skipServerInstallation: true, systemPort: 8203, udid: R5CRA1LCP0M}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-G991B, appium:deviceName: R5CRA1LCP0M, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: R5CRA1LCP0M, appium:disableSuppressAccessibilityService: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:optimalHubUrl: hub-aps.browserstack.com, appium:pixelRatio: 3, appium:platformVersion: 12, appium:skipServerInstallation: true, appium:statBarHeight: 79, appium:systemPort: 8203, appium:takesScreenshot: true, appium:udid: R5CRA1LCP0M, appium:viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_921_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, goog:chromeOptions: {}, platformName: ANDROID}
+Session ID: 2a9def3ee892cd40d46846f1cf91eca02496c529]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
@@ -126,9 +126,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [63525924534d1692ba0d4d3c4b61890af3a09e3e, findElement {using=id, value=buttonAddTrans}]
-Capabilities {appium:appActivity: marcusobyrne.bankingapp.Mai..., appium:appPackage: marcusobyrne.bankingapp, appium:automationName: uiautomator2, appium:browserstack.networklogs: true, appium:build: jenkins-capstoneprojectkae-946, appium:chromedriverPort: 18081, appium:chromedriverPorts: [[18111, 18121]], appium:databaseEnabled: false, appium:desired: {appActivity: marcusobyrne.bankingapp.Mai..., appPackage: marcusobyrne.bankingapp, automationName: uiautomator2, browserstack.networklogs: true, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_917_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, build: jenkins-capstoneprojectkae-946, chromedriverPort: 18081, chromedriverPorts: [[18111, 18121]], deviceName: Android, disableSuppressAccessibilityService: true, goog:chromeOptions: {}, nativeWebScreenshot: true, newCommandTimeout: 0, platformName: Android, skipServerInstallation: true, systemPort: 8201, udid: R5CRC0W8A9X}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-G991B, appium:deviceName: R5CRC0W8A9X, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: R5CRC0W8A9X, appium:disableSuppressAccessibilityService: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:optimalHubUrl: hub-aps.browserstack.com, appium:pixelRatio: 3, appium:platformVersion: 12, appium:skipServerInstallation: true, appium:statBarHeight: 79, appium:systemPort: 8201, appium:takesScreenshot: true, appium:udid: R5CRC0W8A9X, appium:viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_917_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, goog:chromeOptions: {}, platformName: ANDROID}
-Session ID: 63525924534d1692ba0d4d3c4b61890af3a09e3e
+Command: [2a9def3ee892cd40d46846f1cf91eca02496c529, findElement {using=id, value=buttonAddTrans}]
+Capabilities {appium:appActivity: marcusobyrne.bankingapp.Mai..., appium:appPackage: marcusobyrne.bankingapp, appium:automationName: uiautomator2, appium:browserstack.networklogs: true, appium:build: jenkins-capstoneprojectkae-947, appium:chromedriverPort: 18083, appium:chromedriverPorts: [[18133, 18143]], appium:databaseEnabled: false, appium:desired: {appActivity: marcusobyrne.bankingapp.Mai..., appPackage: marcusobyrne.bankingapp, automationName: uiautomator2, browserstack.networklogs: true, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_921_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, build: jenkins-capstoneprojectkae-947, chromedriverPort: 18083, chromedriverPorts: [[18133, 18143]], deviceName: Android, disableSuppressAccessibilityService: true, goog:chromeOptions: {}, nativeWebScreenshot: true, newCommandTimeout: 0, platformName: Android, skipServerInstallation: true, systemPort: 8203, udid: R5CRA1LCP0M}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-G991B, appium:deviceName: R5CRA1LCP0M, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: R5CRA1LCP0M, appium:disableSuppressAccessibilityService: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:optimalHubUrl: hub-aps.browserstack.com, appium:pixelRatio: 3, appium:platformVersion: 12, appium:skipServerInstallation: true, appium:statBarHeight: 79, appium:systemPort: 8203, appium:takesScreenshot: true, appium:udid: R5CRA1LCP0M, appium:viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_921_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, goog:chromeOptions: {}, platformName: ANDROID}
+Session ID: 2a9def3ee892cd40d46846f1cf91eca02496c529
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -167,7 +167,7 @@ at java.base/java.lang.Thread.run(Thread.java:842)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:18:23 CST" name="afterMethod" finished-at="2023-12-27T09:18:24 CST" duration-ms="742" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.BAA_02@1a87b51]" started-at="2023-12-27T09:23:01 CST" name="afterMethod" finished-at="2023-12-27T09:23:01 CST" duration-ms="877" status="PASS">
           <params>
             <param index="0">
               <value>

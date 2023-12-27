@@ -159,7 +159,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>bankdivided.xml</suiteXmlFile>
+                                <suiteXmlFile>banking.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>

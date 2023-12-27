@@ -176,7 +176,7 @@ public class SetupEnv {
         
     }
     
-    @AfterSuite(alwaysRun=true)
+    @AfterClass(alwaysRun=true)
     public void tearDown() throws Exception {
         driver.quit();
     }
