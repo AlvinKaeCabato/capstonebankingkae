@@ -3,14 +3,9 @@
 <suite name="CapstoneSuite">
     <test name="Capstone_Test">
         <classes>
-			<class name="casesPack.MainRunClass">
-				<methods>
-				<!--  -->
-					<include name="BAA_01"/>
-					<include name="BAA_02"/>
-					<include name="BAA_03"/>
-				</methods>
-			</class>
+			<class name="casesPack.BAA_01"></class>
+			<class name="casesPack.BAA_02"></class>
+			<class name="casesPack.BAA_03"></class>
         </classes>
     </test>
  

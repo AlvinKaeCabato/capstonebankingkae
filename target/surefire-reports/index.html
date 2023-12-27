@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-CapstoneSuite" class="navigator-link">
-              <span class="suite-name border-passed">CapstoneSuite</span>
+              <span class="suite-name border-failed">CapstoneSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-CapstoneSuite" class="hide-methods failed suite-CapstoneSuite"> (hide)</a> <!-- hide-methods failed suite-CapstoneSuite -->
+                      <a href="#" panel-name="suite-CapstoneSuite" class="show-methods failed suite-CapstoneSuite"> (show)</a> <!-- show-methods failed suite-CapstoneSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-CapstoneSuite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.BAA_02" class="method navigator-link" hash-for-method="main">main</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-CapstoneSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,17 +118,17 @@
                     <div class="method-list-content passed suite-CapstoneSuite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.MainRunClass" class="method navigator-link" hash-for-method="BAA_01">BAA_01</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.BAA_01" class="method navigator-link" hash-for-method="BAA01">BAA01</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.MainRunClass" class="method navigator-link" hash-for-method="BAA_02">BAA_02</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.BAA_01" class="method navigator-link" hash-for-method="BAA02">BAA02</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.MainRunClass" class="method navigator-link" hash-for-method="BAA_03">BAA_03</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-CapstoneSuite" title="casesPack.BAA_03" class="method navigator-link" hash-for-method="BAA03">BAA03</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-CapstoneSuite -->
@@ -129,31 +143,79 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-CapstoneSuite" class="panel CapstoneSuite">
-          <div class="suite-CapstoneSuite-class-passed">
+          <div class="suite-CapstoneSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">casesPack.MainRunClass</span>
+              <img src="failed.png"/>
+              <span class="class-name">casesPack.BAA_02</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="BAA_01">
-                  </a> <!-- BAA_01 -->
-                  <span class="method-name">BAA_01</span>
+                  <a name="main">
+                  </a> <!-- main -->
+                  <span class="method-name">main</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [63525924534d1692ba0d4d3c4b61890af3a09e3e, findElement {using=id, value=buttonAddTrans}]
+Capabilities {appium:appActivity: marcusobyrne.bankingapp.Mai..., appium:appPackage: marcusobyrne.bankingapp, appium:automationName: uiautomator2, appium:browserstack.networklogs: true, appium:build: jenkins-capstoneprojectkae-946, appium:chromedriverPort: 18081, appium:chromedriverPorts: [[18111, 18121]], appium:databaseEnabled: false, appium:desired: {appActivity: marcusobyrne.bankingapp.Mai..., appPackage: marcusobyrne.bankingapp, automationName: uiautomator2, browserstack.networklogs: true, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_917_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, build: jenkins-capstoneprojectkae-946, chromedriverPort: 18081, chromedriverPorts: [[18111, 18121]], deviceName: Android, disableSuppressAccessibilityService: true, goog:chromeOptions: {}, nativeWebScreenshot: true, newCommandTimeout: 0, platformName: Android, skipServerInstallation: true, systemPort: 8201, udid: R5CRC0W8A9X}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-G991B, appium:deviceName: R5CRC0W8A9X, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: R5CRC0W8A9X, appium:disableSuppressAccessibilityService: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:optimalHubUrl: hub-aps.browserstack.com, appium:pixelRatio: 3, appium:platformVersion: 12, appium:skipServerInstallation: true, appium:statBarHeight: 79, appium:systemPort: 8201, appium:takesScreenshot: true, appium:udid: R5CRC0W8A9X, appium:viewportRect: {height: 2097, left: 0, top: 79, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, bstack:options: {appiumVersion: 1.17.0, hostName: DESKTOP-GO5J5M6, localIdentifier: 27_Dec_917_DESKTOP_GO5J5M6_..., seleniumVersion: 4.13.0}, goog:chromeOptions: {}, platformName: ANDROID}
+Session ID: 63525924534d1692ba0d4d3c4b61890af3a09e3e
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at callPack.BaseMethods.clickElement(BaseMethods.java:67)
+	at casesPack.BAA_02.main(BAA_02.java:37)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 17 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CapstoneSuite-class-failed -->
+          <div class="suite-CapstoneSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">casesPack.BAA_03</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="BAA03">
+                  </a> <!-- BAA03 -->
+                  <span class="method-name">BAA03</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CapstoneSuite-class-passed -->
+          <div class="suite-CapstoneSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">casesPack.BAA_01</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="BAA01">
+                  </a> <!-- BAA01 -->
+                  <span class="method-name">BAA01</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="BAA_02">
-                  </a> <!-- BAA_02 -->
-                  <span class="method-name">BAA_02</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="BAA_03">
-                  </a> <!-- BAA_03 -->
-                  <span class="method-name">BAA_03</span>
+                  <a name="BAA02">
+                  </a> <!-- BAA02 -->
+                  <span class="method-name">BAA02</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -171,13 +233,9 @@
   &lt;test thread-count=&quot;3&quot; parallel=&quot;classes&quot; name=&quot;Capstone_Test-0&quot; verbose=&quot;0&quot;&gt;
     &lt;parameter name=&quot;platform&quot; value=&quot;0&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;casesPack.MainRunClass&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;BAA_01&quot;/&gt;
-          &lt;include name=&quot;BAA_02&quot;/&gt;
-          &lt;include name=&quot;BAA_03&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- casesPack.MainRunClass --&gt;
+      &lt;class name=&quot;casesPack.BAA_01&quot;/&gt;
+      &lt;class name=&quot;casesPack.BAA_02&quot;/&gt;
+      &lt;class name=&quot;casesPack.BAA_03&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Capstone_Test-0 --&gt;
 &lt;/suite&gt; &lt;!-- CapstoneSuite --&gt;
@@ -191,7 +249,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Capstone_Test-0 (1 class)</span>
+                <span class="test-name">Capstone_Test-0 (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -217,24 +275,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'BAA_03')
-data.setCell(0, 2, 'casesPack.MainRunClass')
-data.setCell(0, 3, 101601);
+data.setCell(0, 1, 'BAA01')
+data.setCell(0, 2, 'casesPack.BAA_01')
+data.setCell(0, 3, 79805);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'BAA_01')
-data.setCell(1, 2, 'casesPack.MainRunClass')
-data.setCell(1, 3, 83069);
+data.setCell(1, 1, 'BAA03')
+data.setCell(1, 2, 'casesPack.BAA_03')
+data.setCell(1, 3, 60878);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'BAA_02')
-data.setCell(2, 2, 'casesPack.MainRunClass')
-data.setCell(2, 3, 43131);
+data.setCell(2, 1, 'BAA02')
+data.setCell(2, 2, 'casesPack.BAA_01')
+data.setCell(2, 3, 36656);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'main')
+data.setCell(3, 2, 'casesPack.BAA_02')
+data.setCell(3, 3, 13549);
 window.suiteTableData['CapstoneSuite']= { tableData: data, tableDiv: 'times-div-CapstoneSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-CapstoneSuite">
               </div> <!-- times-div-CapstoneSuite -->
             </div> <!-- times-div -->
@@ -249,9 +311,31 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-CapstoneSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">casesPack.BAA_02</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">endTest</span>
+                <br/>
+                <span class="ignored-method-name">setupReport</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">casesPack.BAA_03</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">setupReport</span>
+                <br/>
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">endTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-CapstoneSuite" class="panel">
@@ -260,62 +344,131 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">casesPack.MainRunClass</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">casesPack.BAA_01</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setupReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_02</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">1262 ms</span>
+                <span class="method-start">1449 ms</span>
               </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_01</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1450 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_03</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1450 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_01</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpWorkfiles</span>
-                <span class="method-start">28633 ms</span>
+                <span class="method-start">25502 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_03</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpWorkfiles</span>
+                <span class="method-start">25805 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_02</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpWorkfiles</span>
+                <span class="method-start">26137 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">resetFlag</span>
-                <span class="method-start">30238 ms</span>
+                <span class="method-start">27402 ms</span>
               </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_03</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">resetFlag</span>
+                <span class="method-start">27402 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_01</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">resetFlag</span>
+                <span class="method-start">27402 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_03</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">BAA_01</span>
-                <span class="method-start">30928 ms</span>
+                <span class="method-name">BAA03</span>
+                <span class="method-start">28322 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_01</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">BAA01</span>
+                <span class="method-start">28327 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_02</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">main</span>
+                <span class="method-start">28333 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=BAA_01 status=SUCCESS method=MainRunClass.BAA_01()[pri:0, instance:casesPack.MainRu...)</span>
-                <span class="method-start">117931 ms</span>
+                <span class="method-name">afterMethod([TestResult name=main status=FAILURE method=BAA_02.main()[pri:0, instance:casesPack.BAA_02@1a87b51] ...)</span>
+                <span class="method-start">46180 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_03</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=BAA03 status=SUCCESS method=BAA_03.BAA03()[pri:3, instance:casesPack.BAA_03@1296822...)</span>
+                <span class="method-start">93147 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">casesPack.BAA_01</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=BAA01 status=SUCCESS method=BAA_01.BAA01()[pri:1, instance:casesPack.BAA_01@4422dd4...)</span>
+                <span class="method-start">112383 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">resetFlag</span>
-                <span class="method-start">119285 ms</span>
+                <span class="method-start">113833 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">BAA_02</span>
-                <span class="method-start">119998 ms</span>
+                <span class="method-name">BAA02</span>
+                <span class="method-start">114595 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=BAA_02 status=SUCCESS method=MainRunClass.BAA_02()[pri:0, instance:casesPack.MainRu...)</span>
-                <span class="method-start">168682 ms</span>
+                <span class="method-name">afterMethod([TestResult name=BAA02 status=SUCCESS method=BAA_01.BAA02()[pri:2, instance:casesPack.BAA_01@4422dd4...)</span>
+                <span class="method-start">156596 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">resetFlag</span>
-                <span class="method-start">169900 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">BAA_03</span>
-                <span class="method-start">170548 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=BAA_03 status=SUCCESS method=MainRunClass.BAA_03()[pri:0, instance:casesPack.MainRu...)</span>
-                <span class="method-start">274803 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">276224 ms</span>
-              </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">endTest</span>
-                <span class="method-start">284265 ms</span>
+                <span class="method-start">157963 ms</span>
+              </div> <!-- configuration-suite after -->
+              <div class="configuration-suite after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">159820 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

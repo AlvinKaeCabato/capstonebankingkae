@@ -61,7 +61,7 @@ public class MainRunClass extends SetupEnv{
 
 		//Clean up step - Logging out
 		navigateBack();
-		bm.clickElement(UserPage.logout);
+		bm.clickElement(UserPage.logout); 
 	}
 	
 	/*

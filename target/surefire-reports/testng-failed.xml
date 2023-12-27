@@ -4,20 +4,18 @@
   <test thread-count="3" parallel="classes" name="Capstone_Test-0(failed)" verbose="0">
     <parameter name="platform" value="0"/>
     <classes>
-      <class name="casesPack.MainRunClass">
+      <class name="casesPack.BAA_02">
         <methods>
-          <include name="BAA_01"/>
-          <include name="BAA_02"/>
           <include name="resetFlag"/>
-          <include name="BAA_03"/>
           <include name="setUpWorkfiles"/>
-          <include name="setUp"/>
+          <include name="main"/>
           <include name="afterMethod"/>
+          <include name="setUp"/>
           <include name="endTest"/>
           <include name="tearDown"/>
           <include name="setupReport"/>
         </methods>
-      </class> <!-- casesPack.MainRunClass -->
+      </class> <!-- casesPack.BAA_02 -->
     </classes>
   </test> <!-- Capstone_Test-0(failed) -->
 </suite> <!-- Failed suite [CapstoneSuite] -->

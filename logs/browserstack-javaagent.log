@@ -976,3 +976,193 @@
 16:10:04.189 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
 16:10:04.819 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
 16:10:05.326 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+07:52:31.797 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+07:52:31.800 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+07:52:31.989 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+07:52:32.036 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+07:52:32.466 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+07:52:32.468 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+07:52:40.255 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+07:52:47.366 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+07:56:24.952 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/4l94wm1epfuboqvvnkovpfj5qlteblgfhb2xfub4 to view build report, insights, and many more debugging information all at one place!
+
+07:56:26.113 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/01adf2120ba831c6db0210622082c262c030a927
+07:56:26.113 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+07:56:26.965 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+07:56:28.123 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+07:58:39.872 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+07:58:39.876 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+07:58:40.053 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+07:58:40.100 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+07:58:40.524 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+07:58:40.524 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+07:58:48.841 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+07:58:55.337 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:00:58.161 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/frxjzwjsnykbnvmhs0y0cjbbfpqz0momt34k4hpm to view build report, insights, and many more debugging information all at one place!
+
+08:00:59.237 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/2a80b8c656e497f4b32b8cbee8ee0a96609fe110
+08:00:59.237 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:00:59.955 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:01:00.151 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:19:17.342 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:19:17.346 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:19:17.512 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:19:17.554 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:19:17.953 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:19:17.953 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:19:25.773 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:19:32.759 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:22:33.927 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/xxx7rwban7ebib7jwlngbqfuenwdy6cp8jv5bkgc to view build report, insights, and many more debugging information all at one place!
+
+08:22:34.980 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/bb602eddf24a7258b653f6f7937fa8c441ebdb93
+08:22:34.981 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:22:35.826 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:22:35.915 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:31:54.909 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:31:54.914 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:31:55.077 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:31:55.131 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:31:55.563 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:31:55.563 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:32:04.479 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:32:11.885 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:34:09.920 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/syiddloerav0iuvzpcjykobdwg2mmltf815eh7gu to view build report, insights, and many more debugging information all at one place!
+
+08:34:10.798 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/2a7c1e7a5c176cbf3d48cdaa5974043c643b4058
+08:34:10.798 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:34:11.618 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:34:11.857 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:34:54.165 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:34:54.169 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:34:54.345 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:34:54.394 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:34:54.815 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:34:54.816 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:35:02.342 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:35:08.176 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:37:16.693 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/9mlub4hvxle0sqckqsuhobuzt5ynb9wkqqwcv0wc to view build report, insights, and many more debugging information all at one place!
+
+08:37:17.778 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/f34b468e1be0021272ad3a2c51db4eb3a25e68e4
+08:37:17.778 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:37:18.628 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:37:18.715 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:38:28.288 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:38:28.293 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:38:28.475 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:38:28.529 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:38:29.024 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:38:29.024 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:38:37.258 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:38:44.638 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:40:37.813 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/r3gpxroz1yrszpiwv2rhuc9z1qv7nigxcuymnsp9 to view build report, insights, and many more debugging information all at one place!
+
+08:40:39.175 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/946361357594c862cd01a2f08cfcb321893713eb
+08:40:39.175 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:40:39.868 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:40:40.020 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:40:56.237 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:40:56.241 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:40:56.441 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:40:56.500 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:40:56.929 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:40:56.929 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:41:04.454 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:41:10.761 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:42:58.524 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/0jwpd36zjabgxnjn3xuvynaw4suislwrtywwmnij to view build report, insights, and many more debugging information all at one place!
+
+08:42:59.733 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/a225a19c8bf8f2a55293405add90dd1a6237199f
+08:42:59.733 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:43:00.485 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:43:01.654 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:44:04.092 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:44:04.098 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:44:04.268 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:44:04.316 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:44:04.737 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:44:04.737 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:44:13.104 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:44:19.795 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:45:51.300 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/dcxgg49dbuq3ery5jsqmqqo3crydulj0hicaljj2 to view build report, insights, and many more debugging information all at one place!
+
+08:45:52.172 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/77551b6bd9c3f376bff7ce5fcff800d5757d7b9f
+08:45:52.172 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:45:53.580 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:45:54.090 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:46:05.252 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:46:05.257 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:46:05.446 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:46:05.498 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:46:05.919 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:46:05.919 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:46:13.644 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:46:20.122 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:48:01.935 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/nzqwocmk9udg6stvifxyxlslgz5wqbk3nlvyrg1g to view build report, insights, and many more debugging information all at one place!
+
+08:48:03.141 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/8b5cc046385ae8cfa8567d546c0a037a7c5a4a62
+08:48:03.141 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:48:03.856 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:48:03.863 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+08:52:40.693 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:52:40.697 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+08:52:40.872 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+08:52:40.919 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:52:41.351 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+08:52:41.351 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:52:49.885 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:52:57.555 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:55:49.723 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/r9qqhvpuwkuwxxq21yttsjvkzuy9iyopcemtfous to view build report, insights, and many more debugging information all at one place!
+
+08:55:50.755 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/3a9a779b39fb30dd5627369fbd02716b2ff81026
+08:55:50.755 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:55:51.667 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+08:55:51.703 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+09:05:48.187 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:05:48.191 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+09:05:48.368 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+09:05:48.417 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:05:48.859 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+09:05:48.860 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:05:58.646 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:06:05.279 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:08:40.281 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/cfvsggo9tpruujxtgkub5jxyizzs54wyeomja0gb to view build report, insights, and many more debugging information all at one place!
+
+09:08:41.270 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/b471a480c2bb080fadf8d63042db04a3d37aaa0f
+09:08:41.271 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:08:42.120 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+09:08:42.178 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+09:12:35.481 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:12:35.485 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+09:12:35.670 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+09:12:35.717 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:12:36.118 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+09:12:36.118 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:12:48.772 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:12:55.583 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:15:16.700 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/qknglmtyuxp0u43i4ntruylboqic6kexnoedmntx to view build report, insights, and many more debugging information all at one place!
+
+09:15:17.548 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/0b066e394b7c87bc8944ad820be7de172d333973
+09:15:17.548 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:15:18.433 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+09:15:18.663 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+09:17:21.474 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:17:21.478 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+09:17:21.646 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+09:17:21.697 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:17:22.117 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+09:17:22.117 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:17:30.059 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:17:36.711 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:20:19.393 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/afwrbownftjn618dpo0ju6eq6myoyixio3mjnqw4 to view build report, insights, and many more debugging information all at one place!
+
+09:20:20.415 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/39131639bc4e43a65bffede79a177184ebbe9e67
+09:20:20.415 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:20:21.253 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - Generated browserstack build artifacts at ./browserstack-artifacts/
+09:20:21.305 [Thread-5] INFO  com.browserstack.LocalFactory - BrowserStack Local Stopped Successfully.
+09:21:56.957 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:21:56.962 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.3.0
+09:21:57.139 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\COLLABERA.DIGITAL\CapstoneBankingGit\CapstoneBanking\browserstack.yml
+09:21:57.187 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:21:57.582 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://9356b925037e89a16ec29ac7e380c1d6b3f1954c]
+09:21:57.582 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:22:04.789 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:22:13.344 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.

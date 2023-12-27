@@ -176,7 +176,7 @@ public class SetupEnv {
         
     }
     
-    @AfterClass(alwaysRun=true)
+    @AfterSuite(alwaysRun=true)
     public void tearDown() throws Exception {
         driver.quit();
     }
@@ -190,10 +190,10 @@ public class SetupEnv {
 	public boolean isAlertPresent() {
 	    try {
 	        driver.switchTo().alert();
-	        System.out.println("ALERT IS PRESENT !! ");
+	        System.out.println("Switch to Alert");
 	        return true;
 	    } catch (Exception e) {
-	    	System.out.println("ALERT IS NOT PRESENT !! ");
+	    	System.out.println("Exception alert not found");
 	        return false;
 	    }
 	}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CapstoneSuite" preserve-order="true">
+    <test name="1st UC">
+        <classes>
+			<class name="casesPack.BAA_01">
+				<methods>
+					<include name="BAA01"></include>
+					<include name="BAA02"></include>
+				</methods>
+			</class>
+        </classes>
+    </test>
+    <!--  
+     <test name="2nd UC">
+        <classes>
+			<class name="casesPack.BAA_02">
+				<methods>
+					<include name="main"></include>
+				</methods>
+			</class>
+        </classes>
+    </test>  
+    -->  
+    <test name="3rd UC">
+        <classes>
+			<class name="casesPack.BAA_03">
+				<methods>
+					<include name="BAA03"></include>
+				</methods>
+			</class>
+        </classes>
+    </test>
+ 
+</suite>
