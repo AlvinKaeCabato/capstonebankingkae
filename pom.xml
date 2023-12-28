@@ -23,11 +23,23 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.5</version>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.slf4j</groupId>
+            		<artifactId>slf4j-api</artifactId>
+            	</exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.13.0</version>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.slf4j</groupId>
+            		<artifactId>slf4j-api</artifactId>
+            	</exclusion>
+            </exclusions>
         </dependency>
         <dependency>
 	    	<groupId>com.relevantcodes</groupId>
@@ -38,6 +50,12 @@
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>8.3.0</version>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.slf4j</groupId>
+            		<artifactId>slf4j-api</artifactId>
+            	</exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -53,19 +71,6 @@
             <groupId>com.browserstack</groupId>
             <artifactId>browserstack-java-sdk</artifactId>
             <version>LATEST</version>
-               <exclusions>
-				<exclusion>
-					<artifactId>logback-classic</artifactId>
-					<groupId>ch.qos.logback</groupId>
-					
-				</exclusion>
-				<exclusion>
-					<artifactId>slf4j-simple</artifactId>
-					<groupId>org.slf4j</groupId>
-					
-				</exclusion>
-			</exclusions>
-			
             <scope>compile</scope>
         </dependency>
 
@@ -80,7 +85,7 @@
   		  <version>5.2.4</version>
 		</dependency>
 		
-	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-->
 		<dependency>
    		 <groupId>com.aventstack</groupId>
    		 <artifactId>extentreports</artifactId>
@@ -103,6 +108,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
    	 </dependencies>
    	 
 
@@ -125,7 +131,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                  <version>3.2.3</version>
                  <configuration>
-					
+					<parallel>none</parallel>
+                	<threadCount>1</threadCount>
                     <suiteXmlFiles>
                         <suiteXmlFile>banking.xml</suiteXmlFile>
                     </suiteXmlFiles>

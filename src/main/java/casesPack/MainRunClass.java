@@ -24,7 +24,7 @@ public class MainRunClass extends SetupEnv{
 	 * Step 5: Validated all the details are same as entered. 
 	 * 
 	 */
-	@Test
+	@Test(priority=0)
 	public void BAA_01() throws Exception{
 		ExtentReportsUtil.logstep("BAA_01 - Create Account - " + driver.getCapabilities().getCapability("deviceModel"));
 		BaseMethods bm = new BaseMethods(driver);
@@ -74,7 +74,7 @@ public class MainRunClass extends SetupEnv{
 	 * Step 6: Click on View transaction 
 	 * Step 7: Validate the  transaction description made is present 
 	 */
-	@Test
+	@Test(priority=1)
 	public void BAA_02() throws Exception{
 		ExtentReportsUtil.logstep("BAA_02 - transaction check - " + driver.getCapabilities().getCapability("deviceModel"));
 		//Step 1 - App is already launch. Closing the app from the previous TC causes data to be not present
@@ -127,7 +127,7 @@ public class MainRunClass extends SetupEnv{
 	 * Step 6: Click on View transaction 
 	 * Step 7: Validate the  transaction description from only current user should be present.  
 	 */
-	@Test
+	@Test(priority=2)
 	public void BAA_03() throws Exception{
 		ExtentReportsUtil.logstep("BAA_03 - Combined Use Case - " + driver.getCapabilities().getCapability("deviceModel"));
 		//Step 1 - Launch Banking App with Setup

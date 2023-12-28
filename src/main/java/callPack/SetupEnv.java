@@ -27,9 +27,11 @@ import org.openqa.selenium.MutableCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.ITestResult;
 
 import io.appium.java_client.Setting;
@@ -78,7 +80,7 @@ public class SetupEnv {
     public void resetFlag() {
     	fail = 0;
     }
-    @BeforeClass(alwaysRun=true)
+    @BeforeSuite(alwaysRun=true)
     public void setUpWorkfiles() throws Exception{
      	//input files
     	configFis = new FileInputStream(file.getAbsoluteFile()
@@ -151,7 +153,7 @@ public class SetupEnv {
         
     }
     
-    @BeforeClass(alwaysRun=true)
+    @BeforeTest(alwaysRun=true)
     public void setUp() throws Exception {
     	fail = 0;    	
    
@@ -176,9 +178,11 @@ public class SetupEnv {
         
     }
     
-    @AfterClass(alwaysRun=true)
+    @AfterSuite(alwaysRun=true)
     public void tearDown() throws Exception {
-        driver.quit();
+    	 if(driver != null){
+ 		    driver.quit();
+ 		   }
     }
     
 

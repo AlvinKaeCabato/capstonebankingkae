@@ -24,12 +24,12 @@ public class BAA_03 extends SetupEnv {
 	 * Step 6: Click on View transaction 
 	 * Step 7: Validate the  transaction description from only current user should be present.  
 	 */
-	@Test(priority=3)
+	@Test(priority=2)
 	public void BAA03() throws Exception{
 		ExtentReportsUtil.logstep("BAA_03 - Combined Use Case - " + driver.getCapabilities().getCapability("deviceModel"));
 		//Step 1 - Launch Banking App with Setup
 		BaseMethods bm = new BaseMethods(driver);
-		//setUp();
+		setUp();
 		//ExtentReportsUtil.info("Reopening App");
 		
 		//Step 2 - Create another account 

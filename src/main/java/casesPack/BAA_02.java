@@ -22,7 +22,7 @@ public class BAA_02 extends SetupEnv {
 	 * Step 6: Click on View transaction 
 	 * Step 7: Validate the  transaction description made is present 
 	 */
-	@Test
+	@Test(priority=1)
 	public void main() throws Exception{
 		
 		ExtentReportsUtil.logstep("BAA_02 - transaction check - " + driver.getCapabilities().getCapability("deviceModel"));
