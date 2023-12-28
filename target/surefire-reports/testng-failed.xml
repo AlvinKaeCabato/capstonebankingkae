@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="3" parallel="tests" name="Failed suite [CapstoneSuite]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="3" parallel="classes" name="Capstone Test-0(failed)" verbose="0">
+  <test thread-count="3" parallel="classes" name="Capstone_Test-0(failed)" verbose="0">
     <parameter name="platform" value="0"/>
     <classes>
-      <class name="casesPack.BAA_03">
+      <class name="casesPack.MainRunClass">
         <methods>
+          <include name="BAA_01"/>
+          <include name="BAA_02"/>
+          <include name="BAA_03"/>
           <include name="resetFlag"/>
-          <include name="BAA03"/>
           <include name="setUpWorkfiles"/>
           <include name="afterMethod"/>
           <include name="setUp"/>
@@ -15,7 +17,7 @@
           <include name="tearDown"/>
           <include name="setupReport"/>
         </methods>
-      </class> <!-- casesPack.BAA_03 -->
+      </class> <!-- casesPack.MainRunClass -->
     </classes>
-  </test> <!-- Capstone Test-0(failed) -->
+  </test> <!-- Capstone_Test-0(failed) -->
 </suite> <!-- Failed suite [CapstoneSuite] -->
