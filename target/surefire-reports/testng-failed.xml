@@ -11,8 +11,8 @@
           <include name="BAA_03"/>
           <include name="resetFlag"/>
           <include name="setUpWorkfiles"/>
-          <include name="afterMethod"/>
           <include name="setUp"/>
+          <include name="afterMethod"/>
           <include name="endTest"/>
           <include name="tearDown"/>
           <include name="setupReport"/>

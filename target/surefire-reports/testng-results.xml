@@ -2,85 +2,85 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-28T14:36:46 CST" name="CapstoneSuite" finished-at="2023-12-28T14:40:31 CST" duration-ms="225470">
+  <suite started-at="2024-01-03T00:36:33 CST" name="CapstoneSuite" finished-at="2024-01-03T00:39:32 CST" duration-ms="179449">
     <groups>
     </groups>
-    <test started-at="2023-12-28T14:36:46 CST" name="Capstone_Test-0" finished-at="2023-12-28T14:40:31 CST" duration-ms="225470">
+    <test started-at="2024-01-03T00:36:33 CST" name="Capstone_Test-0" finished-at="2024-01-03T00:39:32 CST" duration-ms="179449">
       <class name="casesPack.MainRunClass">
-        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:36:44 CST" name="setUpWorkfiles" finished-at="2023-12-28T14:36:45 CST" duration-ms="885" status="PASS">
+        <test-method is-config="true" signature="setUpWorkfiles()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:36:31 CST" name="setUpWorkfiles" finished-at="2024-01-03T00:36:32 CST" duration-ms="1419" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpWorkfiles -->
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:36:45 CST" name="setupReport" finished-at="2023-12-28T14:36:46 CST" duration-ms="374" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:36:32 CST" name="setupReport" finished-at="2024-01-03T00:36:33 CST" duration-ms="750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:36:46 CST" name="setUp" finished-at="2023-12-28T14:37:10 CST" duration-ms="24577" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:36:33 CST" name="setUp" finished-at="2024-01-03T00:37:04 CST" duration-ms="31178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:37:10 CST" name="resetFlag" finished-at="2023-12-28T14:37:10 CST" duration-ms="266" status="PASS">
+        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:37:04 CST" name="resetFlag" finished-at="2024-01-03T00:37:05 CST" duration-ms="567" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetFlag -->
-        <test-method signature="BAA_01()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:37:10 CST" name="BAA_01" finished-at="2023-12-28T14:38:26 CST" duration-ms="76087" status="PASS">
+        <test-method signature="BAA_01()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:37:05 CST" name="BAA_01" finished-at="2024-01-03T00:38:00 CST" duration-ms="55607" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BAA_01 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:38:29 CST" name="afterMethod" finished-at="2023-12-28T14:38:29 CST" duration-ms="245" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:38:03 CST" name="afterMethod" finished-at="2024-01-03T00:38:03 CST" duration-ms="358" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=BAA_01 status=SUCCESS method=MainRunClass.BAA_01()[pri:0, instance:casesPack.MainRunClass@f973499] output={null}]]]>
+                <![CDATA[[TestResult name=BAA_01 status=SUCCESS method=MainRunClass.BAA_01()[pri:0, instance:casesPack.MainRunClass@3241713e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:38:29 CST" name="resetFlag" finished-at="2023-12-28T14:38:30 CST" duration-ms="234" status="PASS">
+        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:38:04 CST" name="resetFlag" finished-at="2024-01-03T00:38:04 CST" duration-ms="385" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetFlag -->
-        <test-method signature="BAA_02()[pri:1, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:38:30 CST" name="BAA_02" finished-at="2023-12-28T14:39:08 CST" duration-ms="38113" status="PASS">
+        <test-method signature="BAA_02()[pri:1, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:38:04 CST" name="BAA_02" finished-at="2024-01-03T00:38:26 CST" duration-ms="21677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BAA_02 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:39:10 CST" name="afterMethod" finished-at="2023-12-28T14:39:10 CST" duration-ms="246" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:38:28 CST" name="afterMethod" finished-at="2024-01-03T00:38:29 CST" duration-ms="434" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=BAA_02 status=SUCCESS method=MainRunClass.BAA_02()[pri:1, instance:casesPack.MainRunClass@f973499] output={null}]]]>
+                <![CDATA[[TestResult name=BAA_02 status=SUCCESS method=MainRunClass.BAA_02()[pri:1, instance:casesPack.MainRunClass@3241713e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:39:11 CST" name="resetFlag" finished-at="2023-12-28T14:39:11 CST" duration-ms="228" status="PASS">
+        <test-method is-config="true" signature="resetFlag()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:38:29 CST" name="resetFlag" finished-at="2024-01-03T00:38:30 CST" duration-ms="324" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetFlag -->
-        <test-method signature="BAA_03()[pri:2, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:39:11 CST" name="BAA_03" finished-at="2023-12-28T14:40:29 CST" duration-ms="78220" status="PASS">
+        <test-method signature="BAA_03()[pri:2, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:38:30 CST" name="BAA_03" finished-at="2024-01-03T00:39:30 CST" duration-ms="60140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BAA_03 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:40:31 CST" name="afterMethod" finished-at="2023-12-28T14:40:31 CST" duration-ms="240" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:39:32 CST" name="afterMethod" finished-at="2024-01-03T00:39:32 CST" duration-ms="406" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=BAA_03 status=SUCCESS method=MainRunClass.BAA_03()[pri:2, instance:casesPack.MainRunClass@f973499] output={null}]]]>
+                <![CDATA[[TestResult name=BAA_03 status=SUCCESS method=MainRunClass.BAA_03()[pri:2, instance:casesPack.MainRunClass@3241713e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:40:31 CST" name="endTest" finished-at="2023-12-28T14:40:31 CST" duration-ms="427" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:39:32 CST" name="endTest" finished-at="2024-01-03T00:39:33 CST" duration-ms="631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.MainRunClass@f973499]" started-at="2023-12-28T14:40:32 CST" name="tearDown" finished-at="2023-12-28T14:40:34 CST" duration-ms="2662" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:casesPack.MainRunClass@3241713e]" started-at="2024-01-03T00:39:33 CST" name="tearDown" finished-at="2024-01-03T00:39:36 CST" duration-ms="2743" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -7,15 +7,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import java.util.Properties;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
@@ -24,11 +20,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.MutableCapabilities;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -52,8 +45,7 @@ public class SetupEnv {
     //For Input/OutputFiles
     protected FileInputStream configFis;
     protected FileInputStream configFisVer;
-    private final String CONFIG_FILE_PATH="//src//main//resources//inputComp.xlsx";
-    private final String VERIFY_FILE_PATH="//src//main//resources//VerifyPass.xlsx";
+    private final String CONFIG_FILE_PATH="//src//main//resources//FullPath.xlsx";
     private final String PROJ_CONFIG_FILE_PATH="//src//main//resources//capstone.properties";
     private final String LOG_OUTPUT_FILE="\\Reports\\ExtRepLog_" + java.time.LocalDate.now()+".html";
     private final String FINAL_LOG_FILE = LOG_OUTPUT_FILE;
@@ -68,8 +60,10 @@ public class SetupEnv {
     public static XSSFRow row,rowVer;
     public static Properties configProj = new Properties();
     
-    
+    //Setup Flags
     public static int fail;
+    public static String prevsearchuser = "";
+    public static int prevsearchindex = -1;
     
     @BeforeSuite
 	public void setupReport() {
@@ -120,26 +114,6 @@ public class SetupEnv {
         }
         
         
-      //Workbook for verification items
-        /*
-    	try {
-    	configFisVer = new FileInputStream(fileVer.getAbsoluteFile()
-        			+ VERIFY_FILE_PATH);
-        workbookVer = new XSSFWorkbook(configFisVer);
-        sheetVer = workbookVer.getSheet("in");
-        System.out.println("Opening verification items workbook");
-    	}catch(FileNotFoundException e) {
-    		e.printStackTrace();
-    	}catch (IOException e) {
-            e.printStackTrace();
-        }
-    	
-        try {
-            configFisVer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }  
-        */
         Iterator<Row> rowIteratorVer = sheetVer.iterator();
         DataFormatter formatterVer = new DataFormatter();
         String c,d;
@@ -234,7 +208,91 @@ public class SetupEnv {
 		Logger.log("End Report");
 	}
 
-	   
+	public String getInputData(String user,String col) {
+		String Data = "";
+        Iterator<Row> rowIterator = sheet.iterator();
+        DataFormatter formatter = new DataFormatter();
+        String a;
+        int i = 0,cell=0;
+        boolean found = false;
+        switch(col) {
+        	case "username": cell=0; break;
+        	case "address1": cell=1; break;
+        	case "address2": cell=2; break;
+        	case "accnum": cell=3; break;
+        	case "pinnum": cell=4; break;
+        	case "currbal": cell=5; break;
+        	case "activeloan": cell=6; break;
+        	case "loanamt": cell=7; break;
+        }
+        
+        if(!prevsearchuser.contains(user)) {
+        	while( rowIterator.hasNext() )
+        	{
+        		Row row = rowIterator.next();
+        		a = formatter.formatCellValue(row.getCell(0));
+        		if(a.equals(user)) {
+        			prevsearchuser = a;
+        			prevsearchindex = i;
+        			found = true;
+        			break;
+        		}
+        		i++;
+        	}
+        	if(found=false) {
+        		System.out.println("User not found");
+        	}
+        	System.out.println("User found, searching for data needed...");
+        	Data = formatter.formatCellValue(sheet.getRow(prevsearchindex).getCell(cell));
+        }else {
+        	System.out.println("User already found previously, searching for data needed...");
+        	Data = formatter.formatCellValue(sheet.getRow(prevsearchindex).getCell(cell));
+        }
+		return Data;
+	}
+	
+	public String getVerifyData(String user,String col) {
+		String Data = "";
+        Iterator<Row> rowIterator = sheetVer.iterator();
+        DataFormatter formatter = new DataFormatter();
+        String a;
+        int i = 0,cell=0;
+        boolean found = false;
+        switch(col) {
+        	case "username": cell=0; break;
+        	case "address1": cell=1; break;
+        	case "address2": cell=2; break;
+        	case "accnum": cell=3; break;
+        	case "pinnum": cell=4; break;
+        	case "currbal": cell=5; break;
+        	case "activeloan": cell=6; break;
+        	case "loanamt": cell=7; break;
+        }
+        
+        if(!prevsearchuser.contains(user)) {
+        	while( rowIterator.hasNext() )
+        	{
+        		Row row = rowIterator.next();
+        		a = formatter.formatCellValue(row.getCell(0));
+        		if(a.equals(user)) {
+        			prevsearchuser = a;
+        			prevsearchindex = i;
+        			found = true;
+        			break;
+        		}
+        		i++;
+        	}
+        	if(found=false) {
+        		System.out.println("User not found");
+        	}
+        	System.out.println("User found, searching for data needed...");
+        	Data = formatter.formatCellValue(sheet.getRow(prevsearchindex).getCell(cell));
+        }else {
+        	System.out.println("User already found previously, searching for data needed...");
+        	Data = formatter.formatCellValue(sheet.getRow(prevsearchindex).getCell(cell));
+        }
+		return Data;
+	}
 }
 
     
