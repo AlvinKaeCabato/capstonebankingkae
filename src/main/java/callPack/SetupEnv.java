@@ -105,28 +105,6 @@ public class SetupEnv {
             e.printStackTrace();
         }  
         
-        Iterator<Row> rowIterator = sheet.iterator();
-        DataFormatter formatter = new DataFormatter();
-        String a,b;
-        while( rowIterator.hasNext() )
-        {
-            Row row = rowIterator.next();
-            a = formatter.formatCellValue(row.getCell(0));
-            b = formatter.formatCellValue(row.getCell(1));
-            configProp.setProperty(a,b);
-        }
-        
-        
-        Iterator<Row> rowIteratorVer = sheetVer.iterator();
-        DataFormatter formatterVer = new DataFormatter();
-        String c,d;
-        while( rowIteratorVer.hasNext() )
-        {
-            Row rowVer = rowIteratorVer.next();
-            c = formatterVer.formatCellValue(rowVer.getCell(0));
-            d = formatterVer.formatCellValue(rowVer.getCell(1));
-            configVer.setProperty(c,d);
-        }
         
     }
     
