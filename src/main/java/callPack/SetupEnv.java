@@ -60,6 +60,7 @@ public class SetupEnv {
     public static XSSFRow row,rowVer;
     public static Properties configProj = new Properties();
     
+    
     //Setup Flags
     public static int fail;
     public static String prevsearchuser = "";
@@ -131,9 +132,8 @@ public class SetupEnv {
     public void setUp() throws Exception {
     	fail = 0;    	
    
-        //Setup driver
+        //Setup driver and capabilities
         MutableCapabilities capabilities = new UiAutomator2Options();
-        
 		capabilities.setCapability("Project", configProj.getProperty("project"));
 		capabilities.setCapability("build", buildName);
 		capabilities.setCapability("name", configProj.getProperty("name"));
@@ -154,6 +154,7 @@ public class SetupEnv {
     
     @AfterSuite(alwaysRun=true)
     public void tearDown() throws Exception {
+    	//Driver teardown
     	 if(driver != null){
  		    driver.quit();
  		   }
@@ -165,23 +166,7 @@ public class SetupEnv {
 	 * 
 	 * 
 	 */
-	public boolean isAlertPresent() {
-	    try {
-	        driver.switchTo().alert();
-	        System.out.println("Switch to Alert");
-	        return true;
-	    } catch (Exception e) {
-	    	System.out.println("Exception alert not found");
-	        return false;
-	    }
-	}
-	public void mobileAlertHandle() {
-	    if (isAlertPresent()) {
-	        Alert alert = driver.switchTo().alert();
-	        alert.accept();
-	        
-	   }
-	}
+
 	public void navigateBack() {
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 	}

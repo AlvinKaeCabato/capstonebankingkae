@@ -42,7 +42,7 @@ public class BAA_02 extends SetupEnv {
 		bm.clickElement(AddTransactionPage.addTrancButton);
 
 		//Step 5 - Returning after clicking on Alert
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 		
 		//Step 6 - View transaction
 		bm.clickElement(UserPage.viewTranc);

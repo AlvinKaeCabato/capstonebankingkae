@@ -41,7 +41,7 @@ public class BAA_03 extends SetupEnv {
 		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user2pin"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user2currbal"));
 		bm.clickElement(CreateAccountPage.saveUserBtn);
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 
 		//Step 3 - Login app using created account
 		bm.clickElement(SplashPage.loginApp);
@@ -55,7 +55,7 @@ public class BAA_03 extends SetupEnv {
 		bm.clickElement(AddTransactionPage.addTrancButton);
 		
 		//Step 5 - Return by handling the Alert
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 
 		//Step 6 - Click on View Transaction
 		bm.clickElement(UserPage.viewTranc);

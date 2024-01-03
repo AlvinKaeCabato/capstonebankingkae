@@ -40,18 +40,18 @@ public class MainRunClass extends SetupEnv{
 		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user1pin"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user1currbal"));
 		*/
-		bm.sendTextToElement(CreateAccountPage.nameText, getInputData("Alvin Kae Cabato","username"));
-		bm.sendTextToElement(CreateAccountPage.add1Text, getInputData("Alvin Kae Cabato","address1"));
-		bm.sendTextToElement(CreateAccountPage.add2Text, getInputData("Alvin Kae Cabato","address2"));
-		bm.sendTextToElement(CreateAccountPage.accNumText, getInputData("Alvin Kae Cabato","accnum"));
-		bm.sendTextToElement(CreateAccountPage.pinNumText, getInputData("Alvin Kae Cabato","pinnum"));
-		bm.sendTextToElement(CreateAccountPage.currBalText, getInputData("Alvin Kae Cabato","currbal"));
+		bm.sendTextToElement(CreateAccountPage.nameText, getInputData(configProj.getProperty("user1"),"username"));
+		bm.sendTextToElement(CreateAccountPage.add1Text, getInputData(configProj.getProperty("user1"),"address1"));
+		bm.sendTextToElement(CreateAccountPage.add2Text, getInputData(configProj.getProperty("user1"),"address2"));
+		bm.sendTextToElement(CreateAccountPage.accNumText, getInputData(configProj.getProperty("user1"),"accnum"));
+		bm.sendTextToElement(CreateAccountPage.pinNumText, getInputData(configProj.getProperty("user1"),"pinnum"));
+		bm.sendTextToElement(CreateAccountPage.currBalText, getInputData(configProj.getProperty("user1"),"currbal"));
 		bm.clickElement(CreateAccountPage.saveUserBtn);
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 		
 		//Step 3 - Login using mpin
 		bm.clickElement(SplashPage.loginApp);
-		bm.sendTextToElement(LoginPage.enterPin,getInputData("Alvin Kae Cabato","pinnum"));
+		bm.sendTextToElement(LoginPage.enterPin,getInputData(configProj.getProperty("user1"),"pinnum"));
 		bm.clickElement(LoginPage.loginBtn);
 		
 		//Step 4 - Click on Account informations
@@ -65,14 +65,14 @@ public class MainRunClass extends SetupEnv{
 		bm.verifyDataIsSame(ViewAccountPage.accNumView, configVer.getProperty("user1acc"));
 		bm.verifyDataIsSame(ViewAccountPage.pinNumView, configVer.getProperty("user1pin"));
 		*/
-		bm.verifyDataIsSame(ViewAccountPage.nameView, getInputData("Alvin Kae Cabato","username"));
-		bm.verifyDataIsSame(ViewAccountPage.add1View, getInputData("Alvin Kae Cabato","address1"));
-		bm.verifyDataIsSame(ViewAccountPage.add2View, getInputData("Alvin Kae Cabato","address2"));
-		bm.verifyDataIsSame(ViewAccountPage.accNumView, getInputData("Alvin Kae Cabato","accnum"));
-		bm.verifyDataIsSame(ViewAccountPage.pinNumView, getInputData("Alvin Kae Cabato","pinnum"));
+		bm.verifyDataIsSame(ViewAccountPage.nameView, getInputData(configProj.getProperty("user1"),"username"));
+		bm.verifyDataIsSame(ViewAccountPage.add1View, getInputData(configProj.getProperty("user1"),"address1"));
+		bm.verifyDataIsSame(ViewAccountPage.add2View, getInputData(configProj.getProperty("user1"),"address2"));
+		bm.verifyDataIsSame(ViewAccountPage.accNumView, getInputData(configProj.getProperty("user1"),"accnum"));
+		bm.verifyDataIsSame(ViewAccountPage.pinNumView, getInputData(configProj.getProperty("user1"),"pinnum"));
 		Float f = Float.parseFloat(bm.getTextFromElement(ViewAccountPage.currBalView));
 		//Float g = Float.parseFloat(configVer.getProperty("user1currbal"));
-		Float g = Float.parseFloat(getInputData("Alvin Kae Cabato","currbal"));
+		Float g = Float.parseFloat(getInputData(configProj.getProperty("user1"),"currbal"));
 		bm.verifyDataIsSameFloat(f, g);
 
 		//Clean up step - Logging out
@@ -98,7 +98,7 @@ public class MainRunClass extends SetupEnv{
 		//Step 2 - Login into account
 		bm.clickElement(SplashPage.loginApp);
 		//bm.sendTextToElement(LoginPage.enterPin, configProp.getProperty("user1pin"));
-		bm.sendTextToElement(LoginPage.enterPin, getInputData("Alvin Kae Cabato","pinnum"));
+		bm.sendTextToElement(LoginPage.enterPin, getInputData(configProj.getProperty("user1"),"pinnum"));
 		bm.clickElement(LoginPage.loginBtn);
 		
 		//Step 3 - Click on Add Transaction
@@ -109,12 +109,12 @@ public class MainRunClass extends SetupEnv{
 		bm.sendTextToElement(AddTransactionPage.editTextDesc,configVer.getProperty("user1trandesc"));
 		bm.sendTextToElement(AddTransactionPage.editTextAmt,configVer.getProperty("user1trancamt"));
 		*/
-		bm.sendTextToElement(AddTransactionPage.editTextDesc,getInputData("Alvin Kae Cabato","activeloan"));
-		bm.sendTextToElement(AddTransactionPage.editTextAmt,getInputData("Alvin Kae Cabato","loanamt"));
+		bm.sendTextToElement(AddTransactionPage.editTextDesc,getInputData(configProj.getProperty("user1"),"activeloan"));
+		bm.sendTextToElement(AddTransactionPage.editTextAmt,getInputData(configProj.getProperty("user1"),"loanamt"));
 		bm.clickElement(AddTransactionPage.addTrancButton);
 
 		//Step 5 - Returning after clicking on Alert
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 		
 		//Step 6 - View transaction
 		bm.clickElement(UserPage.viewTranc);
@@ -130,8 +130,8 @@ public class MainRunClass extends SetupEnv{
 		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user1trandesc"));
 		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user1trancamt"));
 */
-		bm.verifyDataIsSameDirComp(desc, getVerifyData("Alvin Kae Cabato","activeloan"));
-		bm.verifyDataIsSameDirComp(amt, getVerifyData("Alvin Kae Cabato","loanamt"));
+		bm.verifyDataIsSameDirComp(desc, getVerifyData(configProj.getProperty("user1"),"activeloan"));
+		bm.verifyDataIsSameDirComp(amt, getVerifyData(configProj.getProperty("user1"),"loanamt"));
 		
 		//Clean up Step - Logout and tear down
 		//navigateBack();
@@ -168,18 +168,18 @@ public class MainRunClass extends SetupEnv{
 		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user2pin"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user2currbal"));
 		*/
-		bm.sendTextToElement(CreateAccountPage.nameText, getInputData("Alvin Jae Cabato","username"));
-		bm.sendTextToElement(CreateAccountPage.add1Text, getInputData("Alvin Jae Cabato","address1"));
-		bm.sendTextToElement(CreateAccountPage.add2Text, getInputData("Alvin Jae Cabato","address2"));
-		bm.sendTextToElement(CreateAccountPage.accNumText, getInputData("Alvin Jae Cabato","accnum"));
-		bm.sendTextToElement(CreateAccountPage.pinNumText, getInputData("Alvin Jae Cabato","pinnum"));
-		bm.sendTextToElement(CreateAccountPage.currBalText, getInputData("Alvin Jae Cabato","currbal"));
+		bm.sendTextToElement(CreateAccountPage.nameText, getInputData(configProj.getProperty("user2"),"username"));
+		bm.sendTextToElement(CreateAccountPage.add1Text, getInputData(configProj.getProperty("user2"),"address1"));
+		bm.sendTextToElement(CreateAccountPage.add2Text, getInputData(configProj.getProperty("user2"),"address2"));
+		bm.sendTextToElement(CreateAccountPage.accNumText, getInputData(configProj.getProperty("user2"),"accnum"));
+		bm.sendTextToElement(CreateAccountPage.pinNumText, getInputData(configProj.getProperty("user2"),"pinnum"));
+		bm.sendTextToElement(CreateAccountPage.currBalText, getInputData(configProj.getProperty("user2"),"currbal"));
 		bm.clickElement(CreateAccountPage.saveUserBtn);
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 
 		//Step 3 - Login app using created account
 		bm.clickElement(SplashPage.loginApp);
-		bm.sendTextToElement(LoginPage.enterPin,getInputData("Alvin Jae Cabato","pinnum"));
+		bm.sendTextToElement(LoginPage.enterPin,getInputData(configProj.getProperty("user2"),"pinnum"));
 		//bm.sendTextToElement(LoginPage.enterPin,configProp.getProperty("user2pin"));
 		bm.clickElement(LoginPage.loginBtn);
 
@@ -189,12 +189,12 @@ public class MainRunClass extends SetupEnv{
 		bm.sendTextToElement(AddTransactionPage.editTextDesc,configVer.getProperty("user2trandesc"));
 		bm.sendTextToElement(AddTransactionPage.editTextAmt,configVer.getProperty("user2trancamt"));
 		*/
-		bm.sendTextToElement(AddTransactionPage.editTextDesc,getInputData("Alvin Jae Cabato","activeloan"));
-		bm.sendTextToElement(AddTransactionPage.editTextAmt,getInputData("Alvin Jae Cabato","loanamt"));
+		bm.sendTextToElement(AddTransactionPage.editTextDesc,getInputData(configProj.getProperty("user2"),"activeloan"));
+		bm.sendTextToElement(AddTransactionPage.editTextAmt,getInputData(configProj.getProperty("user2"),"loanamt"));
 		bm.clickElement(AddTransactionPage.addTrancButton);
 		
 		//Step 5 - Return by handling the Alert
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 
 		//Step 6 - Click on View Transaction
 		bm.clickElement(UserPage.viewTranc);
@@ -209,8 +209,8 @@ public class MainRunClass extends SetupEnv{
 		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user2trandesc"));
 		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user2trancamt"));
 		*/
-		bm.verifyDataIsSameDirComp(desc, getVerifyData("Alvin Jae Cabato","activeloan"));
-		bm.verifyDataIsSameDirComp(amt, getVerifyData("Alvin Jae Cabato","loanamt"));
+		bm.verifyDataIsSameDirComp(desc, getVerifyData(configProj.getProperty("user2"),"activeloan"));
+		bm.verifyDataIsSameDirComp(amt, getVerifyData(configProj.getProperty("user2"),"loanamt"));
 	}
 	
 }

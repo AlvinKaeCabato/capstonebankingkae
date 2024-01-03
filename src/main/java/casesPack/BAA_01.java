@@ -35,7 +35,7 @@ public class BAA_01 extends SetupEnv {
 		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user1pin"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user1currbal"));
 		bm.clickElement(CreateAccountPage.saveUserBtn);
-		mobileAlertHandle();
+		bm.mobileAlertHandle();
 		
 		//Step 3 - Login using mpin
 		bm.clickElement(SplashPage.loginApp);

@@ -4,12 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 
 import utilsPack.ExtentReportsUtil;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Row;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,11 +23,15 @@ public class BaseMethods {
 	protected AndroidDriver driver;
 	protected WebDriverWait wait;
 	
+	//Driver declaration
 	public BaseMethods(AndroidDriver driver) {
 		this.driver = driver;
 		
 	}
+	
+	//Negative screenshot call
 	public String getScreenshot() {
+		//Variable Declaration
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
@@ -47,6 +49,8 @@ public class BaseMethods {
 		}
 		return screenshotLoc;
 	}
+	
+	//Positive screenshot call
 	public String getScreenshotPass() {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		TakesScreenshot ts = (TakesScreenshot) driver;
@@ -63,6 +67,8 @@ public class BaseMethods {
 		}
 		return screenshotLoc;
 	}
+	
+	//method to click an element
 	public void clickElement(String element) {
 		boolean clicked = false;
 			WebElement elm = driver.findElement(AppiumBy.id(element));
@@ -80,6 +86,26 @@ public class BaseMethods {
 			ExtentReportsUtil.pass(element + " was Clicked");
 			ExtentReportsUtil.logger.log(LogStatus.PASS, 
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
+			/*
+			 * 
+			 * Additional checks
+			 * 
+			 * 
+			 */
+			if(element.contains("AccountNumber")) {
+				if(elm.getText().length() != 6) {
+					System.out.println("Account created but account number is not the right size");
+					ExtentReportsUtil.logger.log(LogStatus.FAIL, 
+							ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+				}
+			}
+			if(element.contains("PINno")) {
+				if(elm.getText().length() != 4) {
+					System.out.println("Account created but pin number is not the right size");
+					ExtentReportsUtil.logger.log(LogStatus.FAIL, 
+							ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+				}
+			}
 		}
 		else {
 			System.out.println(element + " was NOT Clicked");
@@ -91,6 +117,7 @@ public class BaseMethods {
 		
 	}
 	
+	//method to send text to an element
 	public void sendTextToElement(String element, String value) {
 		
 		boolean enteredText = false;
@@ -121,18 +148,18 @@ public class BaseMethods {
 		*/
 	}
 	
+	//method to verify input item is same as database items
 	public void verifyDataIsSame(String element, String value) {
-		boolean enteredText = false;
 		String inputText = "";
 
 			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
 				inputText = elm.getText();		
-				enteredText = true;
+			
 			} catch (StaleElementReferenceException e) {
 				elm = driver.findElement(AppiumBy.id(element));
 				inputText = elm.getText();		
-				enteredText = true;
+				
 			}
 			
 
@@ -148,20 +175,8 @@ public class BaseMethods {
 			ExtentReportsUtil.logger.log(LogStatus.FAIL, ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 	}
-	public void verifyDataIsSame(float act, float exp) {
-		if (act == exp) {
-			System.out.println(act + " is the same as expected value: " + exp);	
-			ExtentReportsUtil.pass(act + " is the same as expected value: " + exp);
-			ExtentReportsUtil.logger.log(LogStatus.PASS, ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
-		}
-		else {
-			System.out.println(act + " is not the same as expected value: " + exp);	
-			ExtentReportsUtil.fail(act + "is not the same as expected value: " + exp);
-			SetupEnv.fail = 1;
-			ExtentReportsUtil.logger.log(LogStatus.FAIL, 
-					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
-		}
-	}
+	
+	//method to verify float input is same as database
 	public void verifyDataIsSameFloat(Float act, Float exp) {
 		if (act.equals(exp)) {
 			System.out.println(act + " is the same as expected value: " + exp);	
@@ -177,6 +192,8 @@ public class BaseMethods {
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 	}
+	
+	//method for direct comparison to data
 	public void verifyDataIsSameDirComp(String act, String exp) {
 		if (act.equals(exp)) {
 			System.out.println(act + " is the same as expected value: " + exp);	
@@ -192,6 +209,8 @@ public class BaseMethods {
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 		}
 	}
+	
+	//method to get text from element
 	public String getTextFromElement(String element) {
 
 		boolean retrieved = false;
@@ -218,31 +237,24 @@ public class BaseMethods {
 		return returnText;
 	}
 	
-	
-	/*
-	public void verifyAccNumCount(String element) {
-		WebElement elm = driver.findElement(AppiumBy.id(element));
-		if(elm.getText().length() == 6) {
-			ExtentReportsUtil.pass(element + "count is exactly 6");
-			ExtentReportsUtil.logger.log(LogStatus.PASS, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
-		}else {
-			ExtentReportsUtil.pass(element + "count is not 6");
-			SetupEnv.fail = 1;
-			ExtentReportsUtil.logger.log(LogStatus.FAIL, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
-		}
+	public boolean isAlertPresent() {
+	    try {
+	        driver.switchTo().alert();
+	        System.out.println("Switch to Alert");
+	        return true;
+	    } catch (Exception e) {
+	    	System.out.println("Exception alert not found");
+	        return false;
+	    }
 	}
-	public void verifyAccPinCount(String element) {
-		WebElement elm = driver.findElement(AppiumBy.id(element));
-		if(elm.getText().length() == 4) {
-			ExtentReportsUtil.pass(element + "count is exactly 4");
-			ExtentReportsUtil.logger.log(LogStatus.PASS, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
-		}else {
-			ExtentReportsUtil.pass(element + "count is not 4");
-			SetupEnv.fail = 1;
-			ExtentReportsUtil.logger.log(LogStatus.FAIL, 	ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
-		}
+	public void mobileAlertHandle() {
+	    if (isAlertPresent()) {
+	        Alert alert = driver.switchTo().alert();
+	        alert.accept();        
+	   }else {
+			System.out.println("Alert was expected here but was not found, case fails");
+			ExtentReportsUtil.logger.log(LogStatus.FAIL, 
+					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
+	   }
 	}
-	*/
-	
-	
 }
