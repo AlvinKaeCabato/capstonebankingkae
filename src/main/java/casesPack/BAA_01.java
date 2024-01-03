@@ -27,23 +27,23 @@ public class BAA_01 extends SetupEnv {
 		//Step 1 - Setup run to launch app before class is started
 		
 		//Step 2 - Create an account
-		bm.clickElement(SplashPage.createAccount);
+		bm.clickElement(SplashPage.createAccount,"BAA_01");
 		bm.sendTextToElement(CreateAccountPage.nameText, configProp.getProperty("user1name"));
 		bm.sendTextToElement(CreateAccountPage.add1Text, configProp.getProperty("user1add1"));
 		bm.sendTextToElement(CreateAccountPage.add2Text, configProp.getProperty("user1add2"));
 		bm.sendTextToElement(CreateAccountPage.accNumText, configProp.getProperty("user1acc"));
 		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user1pin"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user1currbal"));
-		bm.clickElement(CreateAccountPage.saveUserBtn);
+		bm.clickElement(CreateAccountPage.saveUserBtn,"BAA_01");
 		bm.mobileAlertHandle();
 		
 		//Step 3 - Login using mpin
-		bm.clickElement(SplashPage.loginApp);
+		bm.clickElement(SplashPage.loginApp,"BAA_01");
 		bm.sendTextToElement(LoginPage.enterPin,configProp.getProperty("user1pin"));
-		bm.clickElement(LoginPage.loginBtn);
+		bm.clickElement(LoginPage.loginBtn,"BAA_01");
 		
 		//Step 4 - Click on Account informations
-		bm.clickElement(UserPage.accInfo);
+		bm.clickElement(UserPage.accInfo,"BAA_01");
 		
 		//Step 5 - Validate values from the page is equal to the input items
 		bm.verifyDataIsSame(ViewAccountPage.nameView, configVer.getProperty("user1name"));
@@ -57,7 +57,7 @@ public class BAA_01 extends SetupEnv {
 
 		//Clean up step - Logging out
 		navigateBack();
-		bm.clickElement(UserPage.logout); 
+		bm.clickElement(UserPage.logout,"BAA_01"); 
 	}
 
 }

@@ -18,7 +18,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.MutableCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -65,6 +64,9 @@ public class SetupEnv {
     public static int fail;
     public static String prevsearchuser = "";
     public static int prevsearchindex = -1;
+    public static String prevsearchuserver = "";
+    public static int prevsearchindexver = -1;
+    public static int accCount=0,pinCount=0;
     
     @BeforeSuite
 	public void setupReport() {
@@ -238,8 +240,8 @@ public class SetupEnv {
 	
 	public String getVerifyData(String user,String col) {
 		String Data = "";
-        Iterator<Row> rowIterator = sheetVer.iterator();
-        DataFormatter formatter = new DataFormatter();
+        Iterator<Row> rowIteratorVer = sheetVer.iterator();
+        DataFormatter formatterver = new DataFormatter();
         String a;
         int i = 0,cell=0;
         boolean found = false;
@@ -255,13 +257,13 @@ public class SetupEnv {
         }
         
         if(!prevsearchuser.contains(user)) {
-        	while( rowIterator.hasNext() )
+        	while( rowIteratorVer.hasNext() )
         	{
-        		Row row = rowIterator.next();
-        		a = formatter.formatCellValue(row.getCell(0));
+        		Row row = rowIteratorVer.next();
+        		a = formatterver.formatCellValue(row.getCell(0));
         		if(a.equals(user)) {
-        			prevsearchuser = a;
-        			prevsearchindex = i;
+        			prevsearchuserver = a;
+        			prevsearchindexver = i;
         			found = true;
         			break;
         		}
@@ -271,10 +273,10 @@ public class SetupEnv {
         		System.out.println("User not found");
         	}
         	System.out.println("User found, searching for data needed...");
-        	Data = formatter.formatCellValue(sheet.getRow(prevsearchindex).getCell(cell));
+        	Data = formatterver.formatCellValue(sheetVer.getRow(prevsearchindex).getCell(cell));
         }else {
         	System.out.println("User already found previously, searching for data needed...");
-        	Data = formatter.formatCellValue(sheet.getRow(prevsearchindex).getCell(cell));
+        	Data = formatterver.formatCellValue(sheetVer.getRow(prevsearchindex).getCell(cell));
         }
 		return Data;
 	}

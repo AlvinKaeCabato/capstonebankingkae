@@ -18,10 +18,11 @@ public class MainRunClass extends SetupEnv{
 	
 	/*
 	 * BAA_01
-	 * ​Step 1: Launch BankingApp  using .apk file. 	 * Step 2: Create an account  
+	 * ​Step 1: Launch BankingApp  using .apk file. 	 
+	 * Step 2: Create an account  
 	 * Step 3: Login into account using valid mpin 
 	 * Step 4: Click on Details  
-	 * Step 5: Validated all the details are same as entered. 
+	 * Step 5: Validate all the details are same as entered. 
 	 * 
 	 */
 	@Test(priority=0)
@@ -31,53 +32,37 @@ public class MainRunClass extends SetupEnv{
 		//Step 1 - Setup run to launch app before class is started
 		
 		//Step 2 - Create an account
-		bm.clickElement(SplashPage.createAccount);
-		/*
-		bm.sendTextToElement(CreateAccountPage.nameText, configProp.getProperty("user1name"));
-		bm.sendTextToElement(CreateAccountPage.add1Text, configProp.getProperty("user1add1"));
-		bm.sendTextToElement(CreateAccountPage.add2Text, configProp.getProperty("user1add2"));
-		bm.sendTextToElement(CreateAccountPage.accNumText, configProp.getProperty("user1acc"));
-		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user1pin"));
-		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user1currbal"));
-		*/
+		bm.clickElement(SplashPage.createAccount,"BAA_01");
 		bm.sendTextToElement(CreateAccountPage.nameText, getInputData(configProj.getProperty("user1"),"username"));
 		bm.sendTextToElement(CreateAccountPage.add1Text, getInputData(configProj.getProperty("user1"),"address1"));
 		bm.sendTextToElement(CreateAccountPage.add2Text, getInputData(configProj.getProperty("user1"),"address2"));
 		bm.sendTextToElement(CreateAccountPage.accNumText, getInputData(configProj.getProperty("user1"),"accnum"));
 		bm.sendTextToElement(CreateAccountPage.pinNumText, getInputData(configProj.getProperty("user1"),"pinnum"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, getInputData(configProj.getProperty("user1"),"currbal"));
-		bm.clickElement(CreateAccountPage.saveUserBtn);
+		bm.clickElement(CreateAccountPage.saveUserBtn,"BAA_01");
 		bm.mobileAlertHandle();
 		
 		//Step 3 - Login using mpin
-		bm.clickElement(SplashPage.loginApp);
+		bm.clickElement(SplashPage.loginApp,"BAA_01");
 		bm.sendTextToElement(LoginPage.enterPin,getInputData(configProj.getProperty("user1"),"pinnum"));
-		bm.clickElement(LoginPage.loginBtn);
+		bm.clickElement(LoginPage.loginBtn,"BAA_01");
 		
 		//Step 4 - Click on Account informations
-		bm.clickElement(UserPage.accInfo);
+		bm.clickElement(UserPage.accInfo,"BAA_01");
 		
 		//Step 5 - Validate values from the page is equal to the input items
-		/*
-		bm.verifyDataIsSame(ViewAccountPage.nameView, configVer.getProperty("user1name"));
-		bm.verifyDataIsSame(ViewAccountPage.add1View, configVer.getProperty("user1add1"));
-		bm.verifyDataIsSame(ViewAccountPage.add2View, configVer.getProperty("user1add2"));
-		bm.verifyDataIsSame(ViewAccountPage.accNumView, configVer.getProperty("user1acc"));
-		bm.verifyDataIsSame(ViewAccountPage.pinNumView, configVer.getProperty("user1pin"));
-		*/
 		bm.verifyDataIsSame(ViewAccountPage.nameView, getInputData(configProj.getProperty("user1"),"username"));
 		bm.verifyDataIsSame(ViewAccountPage.add1View, getInputData(configProj.getProperty("user1"),"address1"));
 		bm.verifyDataIsSame(ViewAccountPage.add2View, getInputData(configProj.getProperty("user1"),"address2"));
 		bm.verifyDataIsSame(ViewAccountPage.accNumView, getInputData(configProj.getProperty("user1"),"accnum"));
 		bm.verifyDataIsSame(ViewAccountPage.pinNumView, getInputData(configProj.getProperty("user1"),"pinnum"));
 		Float f = Float.parseFloat(bm.getTextFromElement(ViewAccountPage.currBalView));
-		//Float g = Float.parseFloat(configVer.getProperty("user1currbal"));
 		Float g = Float.parseFloat(getInputData(configProj.getProperty("user1"),"currbal"));
 		bm.verifyDataIsSameFloat(f, g);
 
 		//Clean up step - Logging out
 		navigateBack();
-		bm.clickElement(UserPage.logout); 
+		bm.clickElement(UserPage.logout,"BAA_01"); 
 	}
 	
 	/*
@@ -96,28 +81,23 @@ public class MainRunClass extends SetupEnv{
 		//Step 1 - App is already launch. Closing the app from the previous TC causes data to be not present
 		BaseMethods bm = new BaseMethods(driver);
 		//Step 2 - Login into account
-		bm.clickElement(SplashPage.loginApp);
-		//bm.sendTextToElement(LoginPage.enterPin, configProp.getProperty("user1pin"));
+		bm.clickElement(SplashPage.loginApp,"BAA_02");
 		bm.sendTextToElement(LoginPage.enterPin, getInputData(configProj.getProperty("user1"),"pinnum"));
-		bm.clickElement(LoginPage.loginBtn);
+		bm.clickElement(LoginPage.loginBtn,"BAA_02");
 		
 		//Step 3 - Click on Add Transaction
-		bm.clickElement(UserPage.addTranc);
+		bm.clickElement(UserPage.addTranc,"BAA_02");
 		
 		//Step 4 - Edit information for transfer
-		/*
-		bm.sendTextToElement(AddTransactionPage.editTextDesc,configVer.getProperty("user1trandesc"));
-		bm.sendTextToElement(AddTransactionPage.editTextAmt,configVer.getProperty("user1trancamt"));
-		*/
 		bm.sendTextToElement(AddTransactionPage.editTextDesc,getInputData(configProj.getProperty("user1"),"activeloan"));
 		bm.sendTextToElement(AddTransactionPage.editTextAmt,getInputData(configProj.getProperty("user1"),"loanamt"));
-		bm.clickElement(AddTransactionPage.addTrancButton);
+		bm.clickElement(AddTransactionPage.addTrancButton,"BAA_02");
 
 		//Step 5 - Returning after clicking on Alert
 		bm.mobileAlertHandle();
 		
 		//Step 6 - View transaction
-		bm.clickElement(UserPage.viewTranc);
+		bm.clickElement(UserPage.viewTranc,"BAA_02");
 		
 		//Step 7 - Validate info on page to input items
 		String s = bm.getTextFromElement(ViewTransactionPage.viewTrancText);
@@ -125,17 +105,10 @@ public class MainRunClass extends SetupEnv{
 		String desc, amt;
 		desc = x[0];
 		amt = x[1];
-
-/*
-		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user1trandesc"));
-		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user1trancamt"));
-*/
 		bm.verifyDataIsSameDirComp(desc, getVerifyData(configProj.getProperty("user1"),"activeloan"));
 		bm.verifyDataIsSameDirComp(amt, getVerifyData(configProj.getProperty("user1"),"loanamt"));
 		
 		//Clean up Step - Logout and tear down
-		//navigateBack();
-		//bm.clickElement(UserPage.logout);
 		tearDown();
 	}
 	
@@ -156,48 +129,34 @@ public class MainRunClass extends SetupEnv{
 		//Step 1 - Launch Banking App with Setup
 		BaseMethods bm = new BaseMethods(driver);
 		setUp();
-		//ExtentReportsUtil.info("Reopening App");
 		
 		//Step 2 - Create another account 
-		bm.clickElement(SplashPage.createAccount);
-		/*
-		bm.sendTextToElement(CreateAccountPage.nameText, configProp.getProperty("user2name"));
-		bm.sendTextToElement(CreateAccountPage.add1Text, configProp.getProperty("user2add1"));
-		bm.sendTextToElement(CreateAccountPage.add2Text, configProp.getProperty("user2add2"));
-		bm.sendTextToElement(CreateAccountPage.accNumText, configProp.getProperty("user2acc"));
-		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user2pin"));
-		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user2currbal"));
-		*/
+		bm.clickElement(SplashPage.createAccount,"BAA_02");
 		bm.sendTextToElement(CreateAccountPage.nameText, getInputData(configProj.getProperty("user2"),"username"));
 		bm.sendTextToElement(CreateAccountPage.add1Text, getInputData(configProj.getProperty("user2"),"address1"));
 		bm.sendTextToElement(CreateAccountPage.add2Text, getInputData(configProj.getProperty("user2"),"address2"));
 		bm.sendTextToElement(CreateAccountPage.accNumText, getInputData(configProj.getProperty("user2"),"accnum"));
 		bm.sendTextToElement(CreateAccountPage.pinNumText, getInputData(configProj.getProperty("user2"),"pinnum"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, getInputData(configProj.getProperty("user2"),"currbal"));
-		bm.clickElement(CreateAccountPage.saveUserBtn);
+		bm.clickElement(CreateAccountPage.saveUserBtn,"BAA_02");
 		bm.mobileAlertHandle();
 
 		//Step 3 - Login app using created account
-		bm.clickElement(SplashPage.loginApp);
+		bm.clickElement(SplashPage.loginApp,"BAA_02");
 		bm.sendTextToElement(LoginPage.enterPin,getInputData(configProj.getProperty("user2"),"pinnum"));
-		//bm.sendTextToElement(LoginPage.enterPin,configProp.getProperty("user2pin"));
-		bm.clickElement(LoginPage.loginBtn);
+		bm.clickElement(LoginPage.loginBtn,"BAA_02");
 
 		//Step 4 - Transfer money on add transaction
-		bm.clickElement(UserPage.addTranc);
-		/*
-		bm.sendTextToElement(AddTransactionPage.editTextDesc,configVer.getProperty("user2trandesc"));
-		bm.sendTextToElement(AddTransactionPage.editTextAmt,configVer.getProperty("user2trancamt"));
-		*/
+		bm.clickElement(UserPage.addTranc,"BAA_02");
 		bm.sendTextToElement(AddTransactionPage.editTextDesc,getInputData(configProj.getProperty("user2"),"activeloan"));
 		bm.sendTextToElement(AddTransactionPage.editTextAmt,getInputData(configProj.getProperty("user2"),"loanamt"));
-		bm.clickElement(AddTransactionPage.addTrancButton);
+		bm.clickElement(AddTransactionPage.addTrancButton,"BAA_02");
 		
 		//Step 5 - Return by handling the Alert
 		bm.mobileAlertHandle();
 
 		//Step 6 - Click on View Transaction
-		bm.clickElement(UserPage.viewTranc);
+		bm.clickElement(UserPage.viewTranc,"BAA_02");
 		
 		//Step 7 - Validate items on page are same as input items
 		String s = bm.getTextFromElement(ViewTransactionPage.viewTrancText);
@@ -205,10 +164,6 @@ public class MainRunClass extends SetupEnv{
 		String desc, amt;
 		desc = x[0];
 		amt = x[1];
-		/*
-		bm.verifyDataIsSameDirComp(desc, configProp.getProperty("user2trandesc"));
-		bm.verifyDataIsSameDirComp(amt, configProp.getProperty("user2trancamt"));
-		*/
 		bm.verifyDataIsSameDirComp(desc, getVerifyData(configProj.getProperty("user2"),"activeloan"));
 		bm.verifyDataIsSameDirComp(amt, getVerifyData(configProj.getProperty("user2"),"loanamt"));
 	}

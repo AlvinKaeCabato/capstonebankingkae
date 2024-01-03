@@ -33,32 +33,32 @@ public class BAA_03 extends SetupEnv {
 		//ExtentReportsUtil.info("Reopening App");
 		
 		//Step 2 - Create another account 
-		bm.clickElement(SplashPage.createAccount);
+		bm.clickElement(SplashPage.createAccount,"BAA_03");
 		bm.sendTextToElement(CreateAccountPage.nameText, configProp.getProperty("user2name"));
 		bm.sendTextToElement(CreateAccountPage.add1Text, configProp.getProperty("user2add1"));
 		bm.sendTextToElement(CreateAccountPage.add2Text, configProp.getProperty("user2add2"));
 		bm.sendTextToElement(CreateAccountPage.accNumText, configProp.getProperty("user2acc"));
 		bm.sendTextToElement(CreateAccountPage.pinNumText, configProp.getProperty("user2pin"));
 		bm.sendTextToElement(CreateAccountPage.currBalText, configProp.getProperty("user2currbal"));
-		bm.clickElement(CreateAccountPage.saveUserBtn);
+		bm.clickElement(CreateAccountPage.saveUserBtn,"BAA_03");
 		bm.mobileAlertHandle();
 
 		//Step 3 - Login app using created account
-		bm.clickElement(SplashPage.loginApp);
+		bm.clickElement(SplashPage.loginApp,"BAA_03");
 		bm.sendTextToElement(LoginPage.enterPin,configProp.getProperty("user2pin"));
-		bm.clickElement(LoginPage.loginBtn);
+		bm.clickElement(LoginPage.loginBtn,"BAA_03");
 
 		//Step 4 - Transfer money on add transaction
-		bm.clickElement(UserPage.addTranc);
+		bm.clickElement(UserPage.addTranc,"BAA_03");
 		bm.sendTextToElement(AddTransactionPage.editTextDesc,configVer.getProperty("user2trandesc"));
 		bm.sendTextToElement(AddTransactionPage.editTextAmt,configVer.getProperty("user2trancamt"));
-		bm.clickElement(AddTransactionPage.addTrancButton);
+		bm.clickElement(AddTransactionPage.addTrancButton,"BAA_03");
 		
 		//Step 5 - Return by handling the Alert
 		bm.mobileAlertHandle();
 
 		//Step 6 - Click on View Transaction
-		bm.clickElement(UserPage.viewTranc);
+		bm.clickElement(UserPage.viewTranc,"BAA_03");
 		
 		//Step 7 - Validate items on page are same as input items
 		String s = bm.getTextFromElement(ViewTransactionPage.viewTrancText);

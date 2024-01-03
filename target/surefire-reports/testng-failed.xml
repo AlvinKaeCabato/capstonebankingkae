@@ -8,7 +8,6 @@
         <methods>
           <include name="BAA_01"/>
           <include name="BAA_02"/>
-          <include name="BAA_03"/>
           <include name="resetFlag"/>
           <include name="setUpWorkfiles"/>
           <include name="setUp"/>

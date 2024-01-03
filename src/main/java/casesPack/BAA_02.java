@@ -29,23 +29,23 @@ public class BAA_02 extends SetupEnv {
 		//Step 1 - App is already launch. Closing the app from the previous TC causes data to be not present
 		BaseMethods bm = new BaseMethods(driver);
 		//Step 2 - Login into account
-		bm.clickElement(SplashPage.loginApp);
+		bm.clickElement(SplashPage.loginApp,"BAA_02");
 		bm.sendTextToElement(LoginPage.enterPin, configProp.getProperty("user1pin"));
-		bm.clickElement(LoginPage.loginBtn);
+		bm.clickElement(LoginPage.loginBtn,"BAA_02");
 		
 		//Step 3 - Click on Add Transaction
-		bm.clickElement(UserPage.addTranc);
+		bm.clickElement(UserPage.addTranc,"BAA_02");
 		
 		//Step 4 - Edit information for transfer
 		bm.sendTextToElement(AddTransactionPage.editTextDesc,configVer.getProperty("user1trandesc"));
 		bm.sendTextToElement(AddTransactionPage.editTextAmt,configVer.getProperty("user1trancamt"));
-		bm.clickElement(AddTransactionPage.addTrancButton);
+		bm.clickElement(AddTransactionPage.addTrancButton,"BAA_02");
 
 		//Step 5 - Returning after clicking on Alert
 		bm.mobileAlertHandle();
 		
 		//Step 6 - View transaction
-		bm.clickElement(UserPage.viewTranc);
+		bm.clickElement(UserPage.viewTranc,"BAA_02");
 		
 		//Step 7 - Validate info on page to input items
 		String s = bm.getTextFromElement(ViewTransactionPage.viewTrancText);

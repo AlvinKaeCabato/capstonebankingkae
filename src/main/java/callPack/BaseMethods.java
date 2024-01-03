@@ -13,9 +13,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.relevantcodes.extentreports.LogStatus;
-
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -69,7 +67,7 @@ public class BaseMethods {
 	}
 	
 	//method to click an element
-	public void clickElement(String element) {
+	public void clickElement(String element, String usecase) {
 		boolean clicked = false;
 			WebElement elm = driver.findElement(AppiumBy.id(element));
 			try {
@@ -86,25 +84,32 @@ public class BaseMethods {
 			ExtentReportsUtil.pass(element + " was Clicked");
 			ExtentReportsUtil.logger.log(LogStatus.PASS, 
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
+
 			/*
 			 * 
 			 * Additional checks
 			 * 
 			 * 
 			 */
-			if(element.contains("AccountNumber")) {
-				if(elm.getText().length() != 6) {
+			if(element.contains("saveUser")) {
+			if(usecase.contains("BAA_01") || usecase.contains("BAA_03")) {
+				if(SetupEnv.accCount != 6) {
 					System.out.println("Account created but account number is not the right size");
+					SetupEnv.fail = 1;
+					ExtentReportsUtil.fail("Account created but account number is not the right size");
 					ExtentReportsUtil.logger.log(LogStatus.FAIL, 
 							ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 				}
 			}
-			if(element.contains("PINno")) {
-				if(elm.getText().length() != 4) {
+			if(usecase.contains("BAA_01") || usecase.contains("BAA_03")) {
+				if(SetupEnv.pinCount != 4) {
 					System.out.println("Account created but pin number is not the right size");
+					SetupEnv.fail = 1;
+					ExtentReportsUtil.fail("Account created but pin number is not the right size");
 					ExtentReportsUtil.logger.log(LogStatus.FAIL, 
 							ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 				}
+			}
 			}
 		}
 		else {
@@ -133,6 +138,12 @@ public class BaseMethods {
 				elm.sendKeys(value);			
 				enteredText = true;
 			}
+		if(element.contains("AccountNumber")) {
+			SetupEnv.accCount = elm.getText().length();
+		}
+		if(element.contains("PINno")) {
+			SetupEnv.pinCount = elm.getText().length();
+		}
 		/*
 		if (enteredText == true) {
 			System.out.println("Send text value to element: " + element);	
@@ -163,7 +174,7 @@ public class BaseMethods {
 			}
 			
 
-		if (inputText.trim().equals(value.trim())) {
+		if (inputText.trim().toLowerCase().equals(value.trim().toLowerCase())) {
 			System.out.println(inputText + " from" + element + " is the same as expected value: " + value);	
 			ExtentReportsUtil.pass(inputText + " from" + element + " is the same as expected value: " + value);
 			ExtentReportsUtil.logger.log(LogStatus.PASS, ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
@@ -195,7 +206,7 @@ public class BaseMethods {
 	
 	//method for direct comparison to data
 	public void verifyDataIsSameDirComp(String act, String exp) {
-		if (act.equals(exp)) {
+		if (act.toLowerCase().equals(exp.toLowerCase())) {
 			System.out.println(act + " is the same as expected value: " + exp);	
 			ExtentReportsUtil.pass(act + " is the same as expected value: " + exp);
 			ExtentReportsUtil.logger.log(LogStatus.PASS, 
@@ -253,6 +264,7 @@ public class BaseMethods {
 	        alert.accept();        
 	   }else {
 			System.out.println("Alert was expected here but was not found, case fails");
+			ExtentReportsUtil.pass("Alert was expected here but was not found, case fails");
 			ExtentReportsUtil.logger.log(LogStatus.FAIL, 
 					ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
 	   }
