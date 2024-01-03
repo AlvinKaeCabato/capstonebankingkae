@@ -168,11 +168,11 @@ public class SetupEnv {
 	 * 
 	 * 
 	 */
-
+    //method to navigate back
 	public void navigateBack() {
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 	}
-
+	//method to escape special characters
 	public String escapeSpecialCharacters(String data) {
 	    String escapedData = data.replaceAll("\\R", " ");
 	    if (data.contains(",") || data.contains("\"") || data.contains("'")) {
@@ -181,12 +181,15 @@ public class SetupEnv {
 	    }
 	    return escapedData;
 	}
+	
+	//Aftermethod for reporting
     @AfterMethod(alwaysRun=true)
     public void afterMethod(ITestResult result) throws Exception {		    	
     	ExtentReportsUtil.getExtentResult(result);
 		Logger.log("Results Retrieved");
     }
     
+    //Aftersuite for ending reporting
     @AfterSuite
 	public void endTest() throws Exception {
 
@@ -194,7 +197,8 @@ public class SetupEnv {
 		ExtentReportsUtil.closeExtentReport();
 		Logger.log("End Report");
 	}
-
+    
+    //method to get input data
 	public String getInputData(String user,String col) {
 		String Data = "";
         Iterator<Row> rowIterator = sheet.iterator();
@@ -238,6 +242,7 @@ public class SetupEnv {
 		return Data;
 	}
 	
+	//method to get verification data
 	public String getVerifyData(String user,String col) {
 		String Data = "";
         Iterator<Row> rowIteratorVer = sheetVer.iterator();

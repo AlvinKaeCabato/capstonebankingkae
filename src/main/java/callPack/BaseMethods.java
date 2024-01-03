@@ -144,19 +144,6 @@ public class BaseMethods {
 		if(element.contains("PINno")) {
 			SetupEnv.pinCount = elm.getText().length();
 		}
-		/*
-		if (enteredText == true) {
-			System.out.println("Send text value to element: " + element);	
-			ExtentReportsUtil.pass("Send text value to element: " + element);
-			ExtentReportsUtil.logger.log(LogStatus.PASS, ExtentReportsUtil.logger.addScreenCapture(getScreenshotPass()));
-		}
-		else {
-			System.out.println("Unable to send text value to element: " + element);	
-			ExtentReportsUtil.fail("Unable to send text value to element: " + element);
-			SetupEnv.fail = 1;
-			ExtentReportsUtil.logger.log(LogStatus.FAIL, ExtentReportsUtil.logger.addScreenCapture(getScreenshot()));
-		}
-		*/
 	}
 	
 	//method to verify input item is same as database items
